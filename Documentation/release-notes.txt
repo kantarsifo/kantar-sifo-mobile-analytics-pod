@@ -17,7 +17,7 @@ RELEASE NOTES:
 
 v3.3.3
 - Updated documentation
-- Moved Cocoapod repo to Github
+- Flytt av cocoapod repo till Github
 
 V3.3.2
 - Now accepting unformatted 32 char long Codigo SPID 
