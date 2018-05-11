@@ -53,9 +53,10 @@ in `func application ... didFinishLaunchingWithOptions...` add this:
 ```
 This will initate the TSMobileAnalytics and start the 'Sifo Internet' app. 
 
-**CPID**: Your Kantar Sifo Analytics id
-**APPURL**: Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'
-**KEYCHAINACCESSGROUP**: Your app id or a shared app id if you have several apps sharing keychain and your want to track the user between apps.
+**CPID** : Your Kantar Sifo Analytics id  
+**APPURL** : Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'   
+**KEYCHAINACCESSGROUP** : Your app id or a shared app id if you have several apps sharing keychain and your want to track the user between apps  
+
 
 In order to save the cookie from the 'Sifo Internet' app, this is needed in the AppDelegate: 
 ``` SWIFT
@@ -118,7 +119,8 @@ The only thing left to do is to create **SendTag** tracking calls formatted acco
             }
         }
 ```
-**Read the documentation for further instructions**
+
+**Please read the documentation for more detailed instructions**
 
 ----
 
