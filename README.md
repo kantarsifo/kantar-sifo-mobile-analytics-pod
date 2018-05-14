@@ -18,7 +18,7 @@ You also need to have the 'Sifo Internet' panelist app installed on your test de
 
 **Background:**
 ---
-This framework tracks a user by making a formatted url call ('SendTag') with a cookie to a backend. The user is identified via a Sifo account and a UUID in the keychain. The backend recognises the user via the cookie and the resource is tracked by the url. 
+This framework tracks a user by making a formatted url call ('SendTag') with a cookie to a backend. Registered users are identified via a Sifo account and a UUID in the keychain. The backend recognises the user via the cookie and the resource is tracked by the url. There a two types of users: Anonymous users and Orvesto panelists, who has opt-ed in to be tracked and is using a separat panelist app, called 'Sifo Internet'. It's optional to track all users or only panelist users.
 
 This framework will open the 'Sifo Internet' app at first launch, if installed. If the 'Sifo Internet' app is configured correctly, then the 'Sifo Internet' app will in turn open your app almost directly, with a cookie in the app url. This cookie will be stored by the framework. It will also create a UUID in the keychain. This UUID can be shared among your apps using a shared keychain. After a successfull initialisation, the framework is ready to send your tracking tags to the analytics backend. You can track these tags using your tools obtained from Kantar Sifo upon registration.
 
@@ -30,9 +30,11 @@ To make this work, there a few things needed:
 3. Add the code below to the AppDelegate
 4. Add SendTags according to your tracking needs
 
+NOTE! If you are using a hybrid app, read the documentation for more details on how implement the SendTag tracking.
+
 **Implementation instructions:**
 ---
-Code instruction below is in **Swift** only to keep this instruction short.  **Objective-C** examples are available in the Documentation folder 
+Code implementation instructions below are in **Swift** only, to keep this instruction short.  **Objective-C** examples are available in the Documentation folder. There are sample applications in both Ojective-C and Swift in Samples folder.
 
 Add this to your Podfile:
 ``` SWIFT
