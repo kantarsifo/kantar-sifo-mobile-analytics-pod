@@ -27,7 +27,7 @@ V3.3.1 2018-04-26
 
 V3.3.0 2018-04-18
 - Added new URL scheme as Apple deprecates older 
-- Added dispatch_get_main_queue when launching Internetpanelen app url (fixes 10 sec launch problem)
+- Added dispatch_get_main_queue when launching Internetpanelen app url
 - Cocoapod distribution added
 
 v3.2.2, 2017-03-06
