@@ -150,14 +150,19 @@ URL-scheme under the ”Info” tab for your application’s target, as shown in
 Screenshot of the Xcode target ”General”-tab where will find your app
 target’s *Bundle Identifier*.
 <br/>
+
 ![](./media/bundleIdentifier.png)
+
 <br/><br/>
 Screenshot of the Xcode target ”Info”-tab where you define custom
 URL-schemes:
+
 ![](./media/urlScheme.png)
+
 <br/><br/>
 2. While you're making changes in the info.plist, you might as well add some settings needed to allow that your app to open the Panelist app. The easiest way to do these changes, is to show the
 version editor, by clicking the button with the top right of Xcode (see image below).
+
 ![](./media/image5.png)
 
 3. After the changes you've already made, paste in the following:
