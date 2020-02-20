@@ -74,7 +74,6 @@ function getCookie( check_name ) {
 	}
 }
 
-
 function sifo_getCookieValue(cn) {
     c_start = document.cookie.indexOf(cn + "=");
     if (c_start != -1) {
@@ -84,38 +83,4 @@ function sifo_getCookieValue(cn) {
         return document.cookie.substring(c_start, c_end)
     }
     return false
-}
-function sifo_Msr(dxCpid, dxSession, dxCategory, dxContentId, dxName, dxType, dxRef) {
-    if (typeof dxCpid == "undefined") alert('dxCpid is not defined.');
-    if (typeof dxRef == "undefined") dxRef = "";
-    if (typeof dxSession == "undefined") dxSession = "";
-    if (typeof dxCategory == "undefined") dxCategory = "";
-    if (typeof dxContentId == "undefined") dxContentId = "";
-    if (typeof dxName == "undefined") dxName = "";
-    if (typeof dxType == "undefined") dxType = "";
-    var dxEuid = 0;
-    var dxProtoc = "http://";
-    var dxEuidQ = "fresh";
-    var dxDest = "bh.mobiletech.no/sifo/img";
-    var user = sifo_getdxmsr();
-	
-	document.write("user:" + user);
-    if (!user) {
-        dxEuid = new Date().getTime() + '' + (Math.floor((999 - 100) * Math.random()) + 100);
-        sifo_setdxmsr(dxEuid);
-        if (sifo_getdxmsr() != dxEuid) {
-            dxEuidQ = "none"
-        }
-    } else {
-        dxEuid = user;
-        dxEuidQ = "returning"
-    }
-    if (document.images) {
-        dxmsrimg = new Image();
-        dxmsrimg.src = dxProtoc + dxDest + "?cpid=" + dxCpid + "&euid=" + dxEuid + "&euidq=" + dxEuidQ + "&REF=" + encodeURIComponent(dxRef) + "&session=" + escape(dxSession) + "&category=" + encodeURIComponent(dxCategory) + "&id=" + escape(dxContentId) + "&name=" + encodeURIComponent(dxName) + "&type=" + escape(dxType) + "&seed=" + new Date().getTime()
-    } else {		
-        document.write("<img src=\"" + dxProtoc + dxDest + "?cpid=" + dxCpid + "&euid=" + dxEuid + "&euidq=" + dxEuidQ + "&REF=" + encodeURIComponent(dxRef) + "&session=" + escape(dxSession) + "&category=" + encodeURIComponent(dxCategory) + "&id=" + escape(dxContentId) + "&name=" + encodeURIComponent(dxName) + "&type=" + escape(dxType) + "&seed=" + new Date().getTime() + "\"/>")
-    }
-	
-	document.write(getCookie("sifo_cookieKey"));
 }

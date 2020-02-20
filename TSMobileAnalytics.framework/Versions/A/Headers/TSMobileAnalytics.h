@@ -56,9 +56,7 @@
  * This method needs to be implemented in your app's appdelegate method with the same name, if you wish to track a panelist.
  * Forward the openURL:-call to the framework.
  */
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation; // <=iOS8
-
-- (BOOL)application:(UIApplication *)application // >=iOS9
+- (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
 @end

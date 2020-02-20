@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    TSMobileAnalyticsProviderMobileTech,
     TSMobileAnalyticsProviderCodigo
 } TSMobileAnalyticsProvider;
 
@@ -15,7 +14,6 @@ typedef enum {
 } TSInputValidation;
 
 extern int const cpidMaxLengthCodigo;
-extern int const cpidMaxLengthMobileTech;
 
 extern int const appNameMaxLength;
 extern int const categoryMaxLength;
@@ -25,7 +23,6 @@ extern NSString * const prefixIpad;
 extern NSString * const prefixIphone;
 
 extern NSString * const codigoBaseURL;
-extern NSString * const mobileTechBaseURL;
 extern NSString * const taggingEuidq;
 extern NSString * const userIDKey;
 extern NSString * const userdefaultsCookieKey;
