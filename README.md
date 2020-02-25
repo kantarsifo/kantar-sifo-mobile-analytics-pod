@@ -85,7 +85,7 @@ To allow your app to open the 'Sifo Internet' app, add this to Info.plist
 ``` XML
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>se.tns-sifo.internetpanelen'</string>
+		<string>se.tns-sifo.internetpanelen</string>
 		<string>se.tns-sifo.sifopanelen</string>
 	</array>
 ```
