@@ -57,7 +57,7 @@ This will initate the TSMobileAnalytics and start the 'Sifo Internet' app. Repla
 
 **CPID** : Your Kantar Sifo Analytics id  
 **APPURL** : Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'   
-**KEYCHAINACCESSGROUP** : Your app id or a shared app id if you have several apps sharing keychain and your want to track the user between apps  
+**KEYCHAINACCESSGROUP** : Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to **nil**
 
 
 In order to save the cookie from the 'Sifo Internet' app, this function is needed in the AppDelegate: 
@@ -71,6 +71,8 @@ In order to save the cookie from the 'Sifo Internet' app, this function is neede
 With this, code is complete. Now follows setup to make inter-app communcation possible
 
 ----
+NOTE: If you don't wan't to use Shared Keychain, skip this part!
+
 Set `Keychain Sharing` to `ON` in the target Capabilities settings
 This corresponds to the **KEYCHAINACCESSGROUP** above
 
@@ -81,6 +83,8 @@ Change this line in the `.entitlements` file if you need something else than the
 	</array>
 ```
 
+----
+This part is needed so it can open the Internetpanelen app (panelists only)
 To allow your app to open the 'Sifo Internet' app, add this to Info.plist
 ``` XML
 	<key>LSApplicationQueriesSchemes</key>
