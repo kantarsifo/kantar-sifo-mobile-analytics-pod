@@ -18,15 +18,15 @@ You also need to have the 'Sifo Internet' panelist app installed on your test de
 
 **Background:**
 ---
-This framework tracks a user by making a formatted url call ('SendTag') with a cookie to a backend. Registered users are identified via a Sifo account and a UUID in the keychain. The backend recognises the user via the cookie and the resource is tracked by the url. There a two types of users: Anonymous users and Orvesto panelists, who has opt-ed in to be tracked and is using a separat panelist app, called 'Sifo Internet'. It's optional to track all users or only panelist users.
+This framework tracks a user by making a formatted url call ('SendTag') with a cookie to a backend. Registered users are identified via a Sifo account and a UUID in the keychain (or NSUserDefaults if you don't want cross-app UUID sharing). The backend recognises the user via the cookie and the resource is tracked by the url. There a two types of users: Anonymous users and Orvesto panelists, who has opt-ed in to be tracked and is using a separat panelist app, called 'Sifo Internet'. It's optional to track all users or only panelist users.
 
-This framework will open the 'Sifo Internet' app at first launch, if installed. If the 'Sifo Internet' app is configured correctly, then the 'Sifo Internet' app will in turn open your app almost directly, with a cookie in the app url. This cookie will be stored by the framework. It will also create a UUID in the keychain. This UUID can be shared among your apps using a shared keychain. After a successfull initialisation, the framework is ready to send your tracking tags to the analytics backend. You can track these tags using your tools obtained from Kantar Sifo upon registration.
+This framework will open the 'Sifo Internet' app at first launch, if installed. If the 'Sifo Internet' app is configured correctly, then the 'Sifo Internet' app will in turn open your app almost directly, with a cookie in the app url. This cookie will be stored by the framework. It will also create a UUID in the keychain/NSUserDefaults. This UUID can be shared among your apps using a shared keychain or NSUserDefaults. After a successfull initialisation, the framework is ready to send your tracking tags to the analytics backend. You can track these tags using your tools obtained from Kantar Sifo upon registration.
 
 The framework will refresh the cookie by repeating the open the 'Sifo Internet' app procedure every third month.
 
 To make this work, there a few things needed:
 1. Allow your app to open the 'Sifo Internet' app in Info.plist
-2. Add a shared keychain id to an Entitlements file
+2. Add a shared keychain id to an Entitlements file (Optional)
 3. Add the code below to the AppDelegate
 4. Add SendTags according to your tracking needs
 
@@ -57,7 +57,7 @@ This will initate the TSMobileAnalytics and start the 'Sifo Internet' app. Repla
 
 **CPID** : Your Kantar Sifo Analytics id  
 **APPURL** : Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'   
-**KEYCHAINACCESSGROUP** : Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to **nil**
+**KEYCHAINACCESSGROUP** : (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to **nil**
 
 
 In order to save the cookie from the 'Sifo Internet' app, this function is needed in the AppDelegate: 
@@ -68,7 +68,7 @@ In order to save the cookie from the 'Sifo Internet' app, this function is neede
     }
 ```
 
-With this, code is complete. Now follows setup to make inter-app communcation possible
+With this, code is complete. Now follows Shared Keychain setup to make inter-app communcation possible
 
 ----
 NOTE: If you don't wan't to use Shared Keychain, skip this part!
@@ -84,7 +84,7 @@ Change this line in the `.entitlements` file if you need something else than the
 ```
 
 ----
-This part is needed so it can open the Internetpanelen app (panelists only)
+This part is needed so your app can open the Internetpanelen app (panelists only)
 To allow your app to open the 'Sifo Internet' app, add this to Info.plist
 ``` XML
 	<key>LSApplicationQueriesSchemes</key>
