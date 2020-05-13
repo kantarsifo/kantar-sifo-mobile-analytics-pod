@@ -144,7 +144,7 @@ To allow the framework to integrate with the Panelist app you need to implement 
 You also need to add your app’s bundle identifier as a custom URL-scheme so that the Panelist app can find your app.
 
 
-1. Add a custom URL-scheme to your app that matches the bundle identifier of your application. You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom
+1. Add a custom URL-scheme to your app that matches the bundle identifier of your application plus ".tsmobileanalytics"; for example, if your app bundle identifier is "se.nagonting", it should be "se.nagonting.tsmobileanalytics". You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom
 URL-scheme under the ”Info” tab for your application’s target, as shown in the second screenshot below.
 <br/><br/>
 Screenshot of the Xcode target ”General”-tab where will find your app
