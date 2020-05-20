@@ -14,7 +14,7 @@ https://github.com/kantarsifo/SifoInternetSDK
 This instruction assumes you have Cocoapods installed and are familiar with it.
 Otherwise check instructions here: https://cocoapods.org/
 
-You also need to have the 'Sifo Internet' panelist app installed on your test device. The 'Sifo Internet' app holds your Sifo ID details. Otherwise look here: https://itunes.apple.com/se/app/sifo-internet/id1015394138?mt=8
+You also need to have the 'Sifo Internet' panelist app installed on your test device. The 'Sifo Internet' app holds your Sifo ID details. Otherwise look here: https://apps.apple.com/se/app/sifo-internet/id1015394138
 
 **Background:**
 ---
@@ -50,13 +50,14 @@ import TSMobileAnalytics
 in `func application ... didFinishLaunchingWithOptions...` add this:
 ``` SWIFT
     TSMobileAnalytics.createInstance(withCPID: "CPID", applicationName: "APPURL", 
-        trackPanelist: true, keychainAccessGroup: "KEYCHAINACCESSGROUP")
+        trackPanelist: true, isWebViewBased: "ISWEBVIEWBASED", keychainAccessGroup: "KEYCHAINACCESSGROUP")
     TSMobileAnalytics.setLogPrintsActivated(false) //true will print to the debug log
 ```
 This will initate the TSMobileAnalytics and start the 'Sifo Internet' app. Replace the variables above.
 
 **CPID** : Your Kantar Sifo Analytics id  
 **APPURL** : Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'   
+**ISWEBVIEWBASED** : Set this to True if the app’s primary interface is displayed in one or many web views.
 **KEYCHAINACCESSGROUP** : (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to **nil**
 
 
@@ -109,6 +110,8 @@ To enable the 'Sifo Internet' app to open your app, add this to Info.plist
 		</dict>
 	</array>
 ```
+
+Add a custom URL scheme to your app that matches the bundle identifier of your application plus ".tsmobileanalytics". For example, if your app bundle identifier is "se.nagonting", it should be "se.nagonting.tsmobileanalytics". You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom URL-scheme under the ”Info” tab for your application’s target.
 
 Now all setup is complete!
 
