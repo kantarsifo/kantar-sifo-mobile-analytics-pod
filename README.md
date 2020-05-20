@@ -30,7 +30,7 @@ To make this work, there a few things needed:
 3. Add the code below to the AppDelegate
 4. Add SendTags according to your tracking needs
 
-NOTE! If you are using a hybrid app, read the documentation for more details on how implement the SendTag tracking.
+If you are using WKWebViews in the app, the framework has functionality to automatically transmit the Sifo Internet cookie to the WKWebView. Please read the documentation for more details.
 
 **Implementation instructions:**
 ---
