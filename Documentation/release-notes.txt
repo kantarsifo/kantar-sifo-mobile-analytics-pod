@@ -1,14 +1,14 @@
-TNS Sifo Mobile Analytics SDK for iOS
-—————————————————————————————————————
+Kantar Sifo Mobile Analytics SDK for iOS
+————————————————————————————————————————
 
 This SDK will help you measure the usage of your application
-using TNS Sifo’s services. The SDK zip file contains three folders:
+using Kantar Sifo’s services. The SDK contains three folders:
 
 - Framework folder that contains the TSMobileAnalytics.framework file
   that needs to be included and linked with in your project.
 
 - Documentation folder that contains Developer's Guide and API Reference
-  in HTML and Apple Docs (docset) format.
+  in GitHub markdown format.
 
 - Samples folder with code samples in Objective-C and Swift.
 
@@ -16,24 +16,27 @@ using TNS Sifo’s services. The SDK zip file contains three folders:
 RELEASE NOTES:
 
 v4.0.0
-- Move documentation from PDF to github markdown presentation.
-- Remove UIWebView usages
-- Remove Shared Keychain
+- Added support for WKWebView and removed UIWebView usages.
+- Removed Shared Keychain functionality. 
+- Moved documentation from PDF to GitHub markdown format.
+- Added isWebViewBased parameters on initialization.
+- Fixed retrieval of the Sifo panelist id, due to changes in iOS 13.
+  IMPORTANT: This requires a new URL scheme, please see documentation.
 
 v3.3.3
-- Updated documentation
-- Move cocoapod repo to Github
+- Updated documentation.
+- Move cocoapod repo to Github.
 
 V3.3.2
-- Now accepting unformatted 32 char long Codigo SPID 
+- Now accepting unformatted 32 char long Codigo SPID. 
 
 V3.3.1 2018-04-26
-- Updated documentation
+- Updated documentation.
 
 V3.3.0 2018-04-18
-- Added new URL scheme as Apple deprecates older 
-- Added dispatch_get_main_queue when launching Internetpanelen app url (fixes 10 sec launch problem)
-- Cocoapod distribution added
+- Added new URL scheme as Apple deprecates older. 
+- Added dispatch_get_main_queue when launching Internetpanelen app url (fixes 10 sec launch problem).
+- Cocoapod distribution added.
 
 v3.2.2, 2017-03-06
 - Added bitcode support.

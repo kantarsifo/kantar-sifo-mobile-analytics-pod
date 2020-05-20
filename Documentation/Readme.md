@@ -1,20 +1,40 @@
-Developer's Guide - TNS Sifo Mobile Analytics SDK for iOS
+Developer's Guide - Kantar Sifo Mobile Analytics SDK for iOS
 ========
 
 
 Overview
 --------
-This SDK will help you measure the usage of your application using TNS Sifo’s services.
-The SDK zip file contains three folders:
+This SDK will help you measure the usage of your iOS application using Kantar Sifo’s services.
+
+### What's new?
+
+Version 4 of this SDK is a major update with the following significant changes:
+
+- Added support for WKWebView and removed UIWebView usages.
+
+- Removed Shared Keychain functionality. 
+
+- Moved documentation from PDF to GitHub markdown format.
+
+- Added isWebViewBased parameter on initialization.
+
+- Fixed retrieval of the Sifo panelist id, due to changes in iOS 13.
+  **IMPORTANT:** This requires a new URL scheme, please see the section "Integrating with Sifo Internet app to tag Sifo Panelists", under "Setup".
+
+
+### SDK contents
+
+The SDK file contains three folders:
 
 -   **Framework** folder with the TSMobileAnalytics.framework file that needs to be
 included and linked with in your project.
 
--   **Documentation** folder with Developer's Guide and API Reference in HTML and Apple Docs (docset) format.
+-   **Documentation** folder with Developer's Guide and API Reference in HTML and GitHub markdown format.
 
 -  **Samples** folder with code samples in Objective-C and Swift.
 
-Lowest supported iOS version is iOS 9
+Lowest supported iOS version is iOS 11.
+
 
 Sending Tags
 ------------
@@ -26,9 +46,9 @@ The framework can help you with the whole process of sending them to the server.
 
 ### Available Tags
 
-**Customer ID (CPID – 4 or 32 digits) - required**
+**Customer ID (CPID – 32 digits) - required**
 
-The customer ID provided by TNS Sifo or Codigo Analytics. This information will be included in the attribute called “cpid” in the tags sent to the server.
+The customer ID provided by Kantar Sifo or Codigo Analytics. This information will be included in the attribute called “cpid” in the tags sent to the server.
 
 **Application name (type – max 244 characters) - required**
 
@@ -136,7 +156,7 @@ link against you can add it by pressing the “+”-button and choosing
 it from the list of system libraries in the sheet that is presented.
 
 
-### Integrating with SIFO Internet app to tag TNS Sifo Panelists
+### Integrating with Sifo Internet app to tag Sifo Panelists
 
 Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. This is achieved by receiving a panelist Id string from the Panelist app, and setting that Id as a cookie in your app’s shared HTTPCookieStorage. This communication is handled by setting some predefined URL schemes in your app.
 
@@ -195,57 +215,26 @@ use
 
 ```
 
-If you already implementws this method, you can use the *url* argument to
-differentiate which URL-scheme that is responsible for the method getting
-invoked.
+If you already implemented this method, you can use the *url* argument to differentiate which URL-scheme that is responsible for the method getting invoked.
 
 In this example the *url* parameter would be:
 *mo.dyna.TSMobileAnalyticsIntegration:{panelist\_identifier}*
 
 If you successfully implement the integration above the framework will store the panelist identifier in your apps user defaults database under the key “se.tns-sifo.cookiekey”.
 
-It will use this identifier in a cookie set in your app’s NSHTTPCookieStorage. This will allow TNS Sifo to track the panelist’s traffic on participating sites. The cookie is limited to domains used by TNS Sifo.
+It will use this identifier in a cookie set in your app’s NSHTTPCookieStorage. This will allow Kantar Sifo to track the panelist’s traffic on participating sites. The cookie is limited to domains used by Kantar Sifo.
 
-For WebView based apps this is all that’s needed to integrate with the panelist
-tracking. These cookies are then sent for the javascript or
-image-loading tracking done on the webpages of your site. That said, you
-do not need to make any requests from your app like the ones native apps
-do by *sendTagWithCategories* etc.
+For WebView based apps this is all that’s needed to integrate with the panelist tracking. These cookies are then sent for the JavaScript or image-loading tracking done on the webpages of your site. That said, you do not need to make any requests from your app like the ones native apps do by *sendTagWithCategories* etc.
 
 **Please note that steps 1 and 2 are crucial for a successful implementation in a hybrid app. Further more please make sure that your CPID (required parameter) and other optional parameters do match the ones setup in the SIFO-tags implemented by the webpage you wish to
 track.**
 
-**Another note: The built-in support for WebView is limited to UIWebView, and does not work with the WKWebView introduced in iOS 8, please read more about the cookie limitations in this discussion thread: http://stackoverflow.com/questions/24464397/how-can-i-retrieve-a-file-using-wkwebview/24982211#24982211. As a workaround, you need to send tags manually as in a native app integration. **
-It was later fixed in iOS11, but then broken again in 11.3. If you want to integrate using WKWebKit using you need to do research on how to access cookies from WKWebKit. Using Javascript is the most common way of solving this.
+**Another note: The built-in support for WebView was previously limited to UIWebView. However, version 4.X of the framework now only supports WKWebView. The support for the deprecated library UIWebView has been removed.
 
-4\. To test the integration with the “Sifo Internet”-app please download either from the App Store. When you create a new instance of the framework with trackPanelist: set to TRUE, if so it automatically opens the “TNS Sifo Internet app" to check if you are a logged in respondent. You should be redirected back to your own App.
+4\. To test the integration with the “Sifo Internet”-app please download either from the App Store. When you create a new instance of the framework with trackPanelist: set to TRUE, if so it automatically opens the “Sifo Internet" app to check if you are a logged in respondent. You should be redirected back to your own App.
 
-The information about the TNS Sifo application state is stored in the framework. If you now close your app fully and reopen it you should not be redirected to the TNS Sifo Internet App. In approximately one week later we will check once more if the TNS Sifo Internet App state has changed. If the above redirection works as described the TNS Sifo Internet App integration is working correctly.
+The information about the Sifo application state is stored in the framework. If you now close your app fully and reopen it you should not be redirected to the Sifo Internet App. In approximately one week later we will check once more if the Sifo Internet App state has changed. If the above redirection works as described the Sifo Internet App integration is working correctly.
 
-
-Preparing your application to use the keychain for user identification
---------
-
-These steps are only needed if you are interested in identifying one user in more than one of your applications. If say, your team has more than one app installed on the user's device, and you wish to share the panelist ID between these applications.
-
-**Note! If you do not wish to use the keychain functionality, simply set the keychainAccessGroup-parameter to nil in the framework init-call.**
-
-1.  In order for this to work, all applications involved must be set up
-according to these steps. Also they must all share the same
-“Bundle seed”. This is usually the case with all applications
-developed by the same Apple Developer Team.
-
-2.  To verify that your applications have the same bundle seed, log in to your Apple Developer-account, and go to the provisioning portal and navigate to your list of App ID's. Click on the app name of the app you wish to know the bundle seed of, to expand further information.
-The bundle seed is listed under "Prefix".
-
-![](./media/appPrefix.png)
-
-3.  In Xcode, go to your project settings and to the "Capabilities"-tab and activate *Keychain
-sharing* by setting the toggle to “ON”. In the *Keychain Groups*
-textfield enter the name of the property to use when storing user identification, for example ABCDE12345.TNSSIFO, where ABCDE12345 is your bundle seed.
-
-4.  When launching the framework in your application, use the name of this keychain access group as the parameter “keyChainAccessGroup”, when initiating the framework.
-See next chapter for a code example.
 
 Code implementation
 -------------------
@@ -254,7 +243,7 @@ Code implementation
 
 To get started with the tagging, you only need 2 methods.
 
--   Use **createInstanceWithCPID:applicationName:trackPanelist:keychainAccessGroup:** to create an instance of the framework and specify application name and customer ID.
+-   Use **createInstanceWithCPID:applicationName:trackPanelist:isWebViewBased:keychainAccessGroup:** to create an instance of the framework and specify application name and customer ID.
 
 -   Use **sendTagWithCategories:contentName:contentId:completion:** to send a tag to the server when a view is shown in your application.
 
@@ -305,7 +294,7 @@ Setup/Implementation checklist
 1. Add you bundleIdentifier as a custom URL-scheme. This is to make your app accessible for the Sifo Internet-app to perform a sync.
 2. Implement -openUrl: in your appdelegate, forward the call to the framework.
 3. Instantiate the framework with the createInstance-method. Make sure you use the correct parameters.
-4. Download the TNS Sifo Internet application from the app store, make sure the syncing works as expected.
+4. Download the Sifo Internet application from the App Store, make sure the syncing works as expected.
 
 Additional steps for a native implementation
 --------------------------------------------
@@ -330,21 +319,6 @@ completion:^(BOOL success, NSError *error) {
 structure. A maximum of 4 categories is allowed in the structure, and
 their names must not be longer than 62 characters each.
 
-Specifying a keychain access group for user identification in several applications
-------------------------------------
-
-If you have created a keychain access group for identifying a user in
-more than one application, as described in the “setup” section, pass your freshly created keychain access group identifier as a parameter when initializing the framework:
-
-`
-[TSMobileAnalytics createInstanceWithCPID:cpid applicationName:applicationName
-trackPanelist:trackPanelist keychainAccessGroup:accessGroup];
-`
-
-where keyChainAccessGroup is the name of the group that you previously
-specified in the *Keychain Sharing* section in the project settings, for
-example: @"ABCDE12345.TNSSIFO".
-
 Identifying a single user
 -------------------------
 An UUID string will be persisted locally, to your app's NSUserdefault storage. This value will be sent as a query parameter in your tag request, to identify request from one user.
@@ -355,28 +329,24 @@ Frequently asked questions
 
 **A:** There can be a couple of things wrong. Please make sure that:
 -   You have registered your app's bundle identifier as a custom URL scheme in your target's "Info"-tab, under "URL Types".
-- You have implemented the openURL:-method in your app's application delegate, and forwarded that call to the framework. For more thorough information and a step by step-guide, please read the section "Integrating with SIFO Internet app to tag TNS Sifo Panelists", under "Setup".
+- You have implemented the openURL:-method in your app's application delegate, and forwarded that call to the framework. For more thorough information and a step by step-guide, please read the section "Integrating with Sifo Internet app to tag Sifo Panelists", under "Setup".
 
 
 Additional information
 ----------------------
 
-For additional information about what can, or can't, be tagged please
-reach out to TNS Sifo, contact information to be found in the end of this document.
+For additional information about what can, or can't, be tagged please reach out to Kantar Sifo, contact information to be found in the end of this document.
 
 ### Implementation check
 
-Before the app is submitted to App Store, tests need to be performed according to instructions provided by TNS Sifo. Please contact TNS Sifo.
+Before the app is submitted to App Store, tests need to be performed according to instructions provided by Kantar Sifo. Please contact Kantar Sifo.
 
 ### Update strategy
 
-The framework is compatible with iOS 9 or above.
-Updates of the framework will be necessary to fix bugs, add features, handle changes on the servers or the platform etc. For this reason we
-want to make updating of the framework as easy and seamless as possible.
+The framework is compatible with iOS 11 or above.
+Updates of the framework will be necessary to fix bugs, add features, handle changes on the servers or the platform etc. For this reason we want to make updating of the framework as easy and seamless as possible.
 
-When a new version of the framework is the delivered, it should be possible to simply replace the folder containing the framework code and
-then update the software project. The update will always be kept backward-compatible as long as it’s possible, so that your old code will
-still work after the update.
+When a new version of the framework is the delivered, it should be possible to simply replace the folder containing the framework code and then update the software project. The update will always be kept backward-compatible as long as it’s possible, so that your old code will still work after the update.
 
 To keep updating as seamless as possible, it is important that you:
 
@@ -397,10 +367,10 @@ Contact information
 
 Please send any questions or feedback to:
 
-[*peter.andersson@tns-sifo.se*](mailto:peter.andersson@tns-sifo.se)
+[*peter.andersson@kantar.com*](mailto:peter.andersson@kantar.com)
 <br>+46 (0)701 842 372
 
 and/or
 
-[*info@tns-sifo.se*](mailto:info@tns-sifo.se)
+[*info@kantarsifo.com*](mailto:info@kantarsifo.com)
 <br>+46 (0)8 507 420 00
