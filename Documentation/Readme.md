@@ -33,7 +33,7 @@ included and linked with in your project.
 
 -  **Samples** folder with code samples in Objective-C and Swift.
 
-Lowest supported iOS version is iOS 11.
+The lowest supported iOS version is iOS 9. For web view based applications it is recommended to use at least iOS 11, because the WKWebView cookie storage support is not available in earlier versions.
 
 
 Sending Tags
@@ -77,12 +77,7 @@ statistics.
 
 ### User identification across several applications
 
-There are some restrictions regarding identifying a single user between several applications on the iOS platform. Since the use of the device´s UDID was deprecated in 2011, this framework obviously does not use that method to identify users, because it may cause applications to be rejected in the Apple App Store review process. Other hardware-based identifiers, such as MAC address, have the same risks.
-
-The result of this is that several apps can no longer use a unified identifier for a user, which means he/she will be treated as different users on the server. However, there is one exception for this:
-Applications that are developed by the same team and uses the same bundle seed, can still use the same identifier for a single user across applications and identify this user as one.
-
-In order to achieve this, the framework can use the iOS keychain to store a particular ID for a user. However, for this to work you need to set up your applications in a particular way. Please see the setup-section for more information on this.
+There are many restrictions regarding identifying a single user between several applications on the iOS platform. In previous versions of the SDK, shared keychains were used to achieve this. This is no longer possible due to privacy restrictions in recent iOS versions. 
 
 Migration guide
 --------
@@ -101,7 +96,7 @@ Follow this guide if you previously have been using a version of the SDK less th
 
 `
 [TSMobileAnalytics createInstanceWithCPID:@"CPID" applicationName:@"APPNAME"
-trackPanelist:trackPanelist keychainAccessGroup:@"keychainAccessGroup"];
+trackPanelist:trackPanelist keychainAccessGroup:nil];
 `
 
 6.  Replace calls to track events and/or page views, with corresponding calls for the new framework, like so:<br/>
@@ -158,7 +153,7 @@ it from the list of system libraries in the sheet that is presented.
 
 ### Integrating with Sifo Internet app to tag Sifo Panelists
 
-Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. This is achieved by receiving a panelist Id string from the Panelist app, and setting that Id as a cookie in your app’s shared HTTPCookieStorage. This communication is handled by setting some predefined URL schemes in your app.
+Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. This is achieved by receiving a panelist Id string from the Panelist app, and setting that Id as a cookie in your app’s shared WKHTTPCookieStore. This communication is handled by setting some predefined URL schemes in your app.
 
 To allow the framework to integrate with the Panelist app you need to implement a method in your app’s App delegate. In this method you then forward those calls to the framework to so it can save the data it needs in your apps user defaults database to track the panelist.
 You also need to add your app’s bundle identifier as a custom URL-scheme so that the Panelist app can find your app.
@@ -257,7 +252,7 @@ Implementation steps
 3.  Initialize the framework by calling the createInstance method as shown below.<br/>
 ***In the App Delegate’s application:didFinishLaunchingWithOptions***<br/>
 `
-[TSMobileAnalytics createInstanceWithCPID:@"2383" applicationName:@"mobil.sifo-test" trackPanelist:YES keychainAccessGroup:@"mo.dyna.TSMobileAnalyticsIntegration"];
+[TSMobileAnalytics createInstanceWithCPID:@"2383" applicationName:@"mobil.sifo-test" trackPanelist:YES keychainAccessGroup:nil];
 
 
 `<br/><br/>
@@ -343,7 +338,7 @@ Before the app is submitted to App Store, tests need to be performed according t
 
 ### Update strategy
 
-The framework is compatible with iOS 11 or above.
+The framework is compatible with iOS 9 or above. 
 Updates of the framework will be necessary to fix bugs, add features, handle changes on the servers or the platform etc. For this reason we want to make updating of the framework as easy and seamless as possible.
 
 When a new version of the framework is the delivered, it should be possible to simply replace the folder containing the framework code and then update the software project. The update will always be kept backward-compatible as long as it’s possible, so that your old code will still work after the update.

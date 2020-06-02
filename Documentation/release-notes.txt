@@ -15,19 +15,24 @@ using Kantar Sifo’s services. The SDK contains three folders:
 
 RELEASE NOTES:
 
-v4.0.0
+v4.0.1, 2020-06-02
+- Added backward compatibility with iOS 9. 
+  (Note that the WKWebView support requires iOS 11)
+- Updated documentation.
+
+v4.0.0, 2020-05-20
 - Added support for WKWebView and removed UIWebView usages.
 - Removed Shared Keychain functionality. 
 - Moved documentation from PDF to GitHub markdown format.
-- Added isWebViewBased parameters on initialization.
+- Added isWebViewBased parameter on initialization.
 - Fixed retrieval of the Sifo panelist id, due to changes in iOS 13.
   IMPORTANT: This requires a new URL scheme, please see documentation.
 
-v3.3.3
+v3.3.3, 2018-05-09
 - Updated documentation.
 - Move cocoapod repo to Github.
 
-V3.3.2
+V3.3.2, 2018-05-01
 - Now accepting unformatted 32 char long Codigo SPID. 
 
 V3.3.1 2018-04-26
