@@ -15,7 +15,7 @@
  * Designated framework initializer.
  * @param cpid The customer specific CPID provided the customer by TNS Sifo. Cannot be nil nor empty.
  * @param appName The unique application name to identify the app. Cannot be nil nor empty.
- * @param trackPanelist Set this to true if you wish to track logged in SIFO panelists only.
+ * @param trackPanelist Set this to true if you wish to track logged in SIFO panelists.
  * @param webViewBased Set this to true if the application is primarily based on HTML/JavaScript running in web views
  * @param keychainAccessGroup set this to your keychain property, to share userId across applications with the same bundle seed.
  * @return The instance of the framework.
