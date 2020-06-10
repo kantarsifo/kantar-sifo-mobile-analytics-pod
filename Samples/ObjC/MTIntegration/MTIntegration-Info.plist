@@ -40,7 +40,7 @@
 			<string>mo.dyna.TSMobileAnalyticsIntegration</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mo.dyna.TSMobileAnalyticsIntegration</string>
+				<string>mo.dyna.TSMobileAnalyticsIntegration.tsmobileanalytics</string>
 			</array>
 		</dict>
 	</array>

@@ -54,7 +54,7 @@
 		7868106B1E1AAA1300F1E3D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7868106D1E1AAADC00F1E3D5 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		7868107C1E1AADE300F1E3D5 /* HybridIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HybridIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7868107D1E1AADE400F1E3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/mohammadnajafi/Documents/Dynamo/Developer/Projects/TNS-SifoMobileAnalytics-iOS/Samples/Swift 3/TSMobileAnalyticsIntegration/TSMobileAnalyticsIntegration/Info.plist"; sourceTree = "<absolute>"; };
+		7868107D1E1AADE400F1E3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TSMobileAnalyticsIntegration/Info.plist; sourceTree = SOURCE_ROOT; };
 		7868107E1E1AAE4E00F1E3D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7868107F1E1AAE4E00F1E3D5 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		786810821E1AD3C000F1E3D5 /* TSMobileAnalyticsIntegration.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TSMobileAnalyticsIntegration.entitlements; sourceTree = "<group>"; };

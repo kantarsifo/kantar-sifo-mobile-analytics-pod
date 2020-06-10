@@ -96,7 +96,7 @@ Follow this guide if you previously have been using a version of the SDK less th
 
 `
 [TSMobileAnalytics createInstanceWithCPID:@"CPID" applicationName:@"APPNAME"
-trackPanelist:trackPanelist keychainAccessGroup:nil];
+trackPanelist:trackPanelist isWebViewBased:isWebViewBased keychainAccessGroup:nil];
 `
 
 6.  Replace calls to track events and/or page views, with corresponding calls for the new framework, like so:<br/>
@@ -156,11 +156,11 @@ it from the list of system libraries in the sheet that is presented.
 Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. This is achieved by receiving a panelist Id string from the Panelist app, and setting that Id as a cookie in your app’s shared WKHTTPCookieStore. This communication is handled by setting some predefined URL schemes in your app.
 
 To allow the framework to integrate with the Panelist app you need to implement a method in your app’s App delegate. In this method you then forward those calls to the framework to so it can save the data it needs in your apps user defaults database to track the panelist.
-You also need to add your app’s bundle identifier as a custom URL-scheme so that the Panelist app can find your app.
+You also need to add your app’s bundle identifier as a custom URL scheme so that the Panelist app can find your app.
 
 
-1. Add a custom URL-scheme to your app that matches the bundle identifier of your application plus ".tsmobileanalytics"; for example, if your app bundle identifier is "se.nagonting", it should be "se.nagonting.tsmobileanalytics". You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom
-URL-scheme under the ”Info” tab for your application’s target, as shown in the second screenshot below.
+1. Add a custom URL scheme to your app that matches the bundle identifier of your application plus ".tsmobileanalytics"; for example, if your app bundle identifier is "se.nagonting", it should be "se.nagonting.tsmobileanalytics". You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom
+URL scheme under the ”Info” tab for your application’s target, as shown in the second screenshot below.
 <br/><br/>
 Screenshot of the Xcode target ”General”-tab where will find your app
 target’s *Bundle Identifier*.
@@ -170,7 +170,7 @@ target’s *Bundle Identifier*.
 
 <br/><br/>
 Screenshot of the Xcode target ”Info”-tab where you define custom
-URL-schemes:
+URL schemes:
 
 ![](./media/urlScheme.png)
 
@@ -188,7 +188,7 @@ version editor, by clicking the button with the top right of Xcode (see image be
         <string>se.tns-sifo.sifopanelen</string>
     </array>
 ```
-4. To have this custom URL-scheme picked up by the framework you have to
+4. To have this custom URL scheme picked up by the framework you have to
 implement the method - application:openURL:sourceApplication:annotation:
 in your app’s delegate and forward it’s arguments to the same method as
 implemented by the framework. At this point you already need to have
@@ -196,7 +196,6 @@ instantiated the framework with the
 *createInstance* method as described above.
 
 ```Objective-C
-iOS9 or newer, use this syntax:
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
@@ -210,7 +209,7 @@ use
 
 ```
 
-If you already implemented this method, you can use the *url* argument to differentiate which URL-scheme that is responsible for the method getting invoked.
+If you already implemented this method, you can use the *url* argument to differentiate which URL scheme that is responsible for the method getting invoked.
 
 In this example the *url* parameter would be:
 *mo.dyna.TSMobileAnalyticsIntegration:{panelist\_identifier}*
@@ -221,14 +220,13 @@ It will use this identifier in a cookie set in your app’s NSHTTPCookieStorage.
 
 For WebView based apps this is all that’s needed to integrate with the panelist tracking. These cookies are then sent for the JavaScript or image-loading tracking done on the webpages of your site. That said, you do not need to make any requests from your app like the ones native apps do by *sendTagWithCategories* etc.
 
-**Please note that steps 1 and 2 are crucial for a successful implementation in a hybrid app. Further more please make sure that your CPID (required parameter) and other optional parameters do match the ones setup in the SIFO-tags implemented by the webpage you wish to
-track.**
+**Please note that steps 1 and 2 are crucial for a successful implementation in a hybrid app. Further more please make sure that your CPID (required parameter) and other optional parameters do match the ones setup in the Sifo tags implemented by the webpage you wish to track.**
 
 **Another note: The built-in support for WebView was previously limited to UIWebView. However, version 4.X of the framework now only supports WKWebView. The support for the deprecated library UIWebView has been removed.
 
-4\. To test the integration with the “Sifo Internet”-app please download either from the App Store. When you create a new instance of the framework with trackPanelist: set to TRUE, if so it automatically opens the “Sifo Internet" app to check if you are a logged in respondent. You should be redirected back to your own App.
+5\. To test the integration with the “Sifo Internet” app please download it from the App Store. When you create a new instance of the framework with trackPanelist: set to TRUE, if so it automatically opens the “Sifo Internet" app to check if you are a logged in respondent. You should be redirected back to your own app.
 
-The information about the Sifo application state is stored in the framework. If you now close your app fully and reopen it you should not be redirected to the Sifo Internet App. In approximately one week later we will check once more if the Sifo Internet App state has changed. If the above redirection works as described the Sifo Internet App integration is working correctly.
+The information about the Sifo application state is stored in the framework. If you now close your app fully and reopen it you should not be redirected to the Sifo Internet App. In approximately two weeks later we will check once more if the Sifo Internet app state has changed. If the above redirection works as described the Sifo Internet App integration is working correctly.
 
 
 Code implementation
@@ -247,16 +245,16 @@ Implementation steps
 
 1.  Import the framework header &lt;TSMobileAnalytics/TSMobileAnalytics.h&gt; in your App’s delegate and any other class where you want to perform tagging.
 
-2.  Turn on debug-prints to see that the framework is working properly by calling the setLogPrintsActivated method as shown below. (this line can be removed once you have verified that the tagging is working properly)
+2.  Turn on debug prints to see that the framework is working properly by calling the setLogPrintsActivated method as shown below. (this line can be removed once you have verified that the tagging is working properly)
 
 3.  Initialize the framework by calling the createInstance method as shown below.<br/>
 ***In the App Delegate’s application:didFinishLaunchingWithOptions***<br/>
 `
-[TSMobileAnalytics createInstanceWithCPID:@"2383" applicationName:@"mobil.sifo-test" trackPanelist:YES keychainAccessGroup:nil];
+[TSMobileAnalytics createInstanceWithCPID:@"56d7728b318c4ae98963619ca1a2ec29" applicationName:@"mobil.sifo-test" trackPanelist:YES isWebViewBased:YES keychainAccessGroup:nil];
 
 
 `<br/><br/>
-…where cpid is a String holding your Customer ID and name is a String with the name of your application. The CPID must only contain digits and may not be longer than 32 characters. The application name may not be longer than 244 characters.<br/><br/>
+…where cpid is a String holding your Customer ID and name is a String with the name of your application. The CPID must only contain alphanumeric characters and may not be longer than 32 characters. The application name may not be longer than 244 characters.<br/><br/>
 It can also be a good idea to make sure that createInstance does not return nil, which means that something was wrong with your input data. If this happens you will also get an error print in the log, if log prints has set to activated.
 
 4.  Now, use the following methods to send a tag:<br/><br/>
@@ -286,7 +284,7 @@ The framework will now send a tag to the server with the information you provide
 Setup/Implementation checklist
 ------------------------------
 
-1. Add you bundleIdentifier as a custom URL-scheme. This is to make your app accessible for the Sifo Internet-app to perform a sync.
+1. Add you bundleIdentifier as a custom URL scheme. This is to make your app accessible for the Sifo Internet-app to perform a sync.
 2. Implement -openUrl: in your appdelegate, forward the call to the framework.
 3. Instantiate the framework with the createInstance-method. Make sure you use the correct parameters.
 4. Download the Sifo Internet application from the App Store, make sure the syncing works as expected.
@@ -294,7 +292,7 @@ Setup/Implementation checklist
 Additional steps for a native implementation
 --------------------------------------------
 
-1. Implement the sendTag-method everywhere you wish to send a tag through the framework.
+1. Implement the sendTag method everywhere you wish to send a tag through the framework.
 
 Options
 -------
@@ -316,7 +314,7 @@ their names must not be longer than 62 characters each.
 
 Identifying a single user
 -------------------------
-An UUID string will be persisted locally, to your app's NSUserdefault storage. This value will be sent as a query parameter in your tag request, to identify request from one user.
+An UUID string will be persisted locally, to your app's NSUserDefault storage. This value will be sent as a query parameter in your tag request, to identify request from one user.
 
 Frequently asked questions
 -------------------------

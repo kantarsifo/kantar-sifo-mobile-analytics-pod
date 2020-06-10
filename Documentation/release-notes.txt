@@ -15,6 +15,10 @@ using Kantar Sifo’s services. The SDK contains three folders:
 
 RELEASE NOTES:
 
+v4.0.2, 2020-06-09
+- Fixed problem with Sifo panelist id synchronization.
+- Updated code samples and documentation.
+
 v4.0.1, 2020-06-02
 - Added backward compatibility with iOS 9. 
   (Note that the WKWebView support requires iOS 11)
