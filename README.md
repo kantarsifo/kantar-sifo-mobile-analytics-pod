@@ -42,6 +42,10 @@ Minimum iOS deployment target: 9.0
 
 Cocoapods:
 ``` Ruby
+source 'https://github.com/kantarsifo/kantar-sifo-mobile-analytics-podspec.git'
+``` 
+
+``` Ruby
 pod 'TSMobileAnalytics'
 ``` 
 

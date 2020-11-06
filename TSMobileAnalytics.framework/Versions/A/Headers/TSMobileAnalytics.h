@@ -16,23 +16,23 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
  * @param keychainAccessGroup set this to your keychain property, to share userId across applications with the same bundle seed.
  * @param additionals Set this to send any additional data to sync with panelist app.
  */
-+ (void)initializeWithCPID:(NSString *)cpid
-           applicationName:(NSString *)appName
++ (void)initializeWithCPID:(nonnull NSString *)cpid
+           applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
             isWebViewBased:(BOOL)webViewBased
-       keychainAccessGroup:(NSString *)keychainAccessGroup
-               additionals:(NSDictionary <NSString *, NSString *> *)additionals;
+       keychainAccessGroup:(nullable NSString *)keychainAccessGroup
+               additionals:(nullable NSDictionary <NSString *, NSString *> *)additionals;
 
-+ (void)initializeWithCPID:(NSString *)cpid
-           applicationName:(NSString *)appName
++ (void)initializeWithCPID:(nonnull NSString *)cpid
+           applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
             isWebViewBased:(BOOL)webViewBased
-       keychainAccessGroup:(NSString *)keychainAccessGroup;
+       keychainAccessGroup:(nullable NSString *)keychainAccessGroup;
 
-+ (void)initializeWithCPID:(NSString *)cpid
-           applicationName:(NSString *)appName
++ (void)initializeWithCPID:(nonnull NSString *)cpid
+           applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
-       keychainAccessGroup:(NSString *)keychainAccessGroup;
+       keychainAccessGroup:(nullable NSString *)keychainAccessGroup;
 
 /**
  ** Enable logging.
@@ -46,23 +46,23 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
  * @param contentID Optional The contentID for the tag.
  * @param completionBlock Optional block to be executed on completion.
  */
-+ (void)sendTagWithCategories:(NSArray <NSString *> *)categories
-                    contentID:(NSString *)contentID
-                   completion:(void (^)(BOOL success, NSError *error))completionBlock;
++ (void)sendTagWithCategories:(nonnull NSArray <NSString *> *)categories
+                    contentID:(nonnull NSString *)contentID
+                   completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completionBlock;
 
 /**
  * This method needs to be implemented in your app's appdelegate method with the same name, if you wish to track a panelist.
  * Forward the openURL:-call to the framework.
  */
-+ (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
++ (BOOL)application:(nonnull UIApplication *)application
+            openURL:(nonnull NSURL *)url
+            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
 
 /**
  * Set main webview for webbased app.
  * Must be set for framework to work properly with hybrid apps.
  * If native app, don't use this.
  */
-+ (void)setWebView:(WKWebView *)webview;
++ (void)setWebView:(nullable WKWebView *)webview;
 
 @end
