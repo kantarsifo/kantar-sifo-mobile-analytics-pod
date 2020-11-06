@@ -1,33 +1,38 @@
 #import <UIKit/UIKit.h>
-#import "TSMobileAnalyticsConstants.h"
+#import <WebKit/WebKit.h>
+
+typedef NS_ENUM(NSUInteger, TrackingType) {
+    TrackUsersAndPanelists,
+    TrackPanelistsOnly
+};
 
 @interface TSMobileAnalytics : NSObject
-
-@property (nonatomic, readonly) NSString *cpid;
-@property (nonatomic, readonly) NSString *applicationName;
-@property (nonatomic, readonly) NSString *keychainAccessGroup;
-@property (nonatomic) BOOL logPrintsActivated;
-@property (nonatomic) BOOL trackPanelistOnly;
-@property (nonatomic) BOOL isWebViewBased;
-@property (nonatomic, readonly) TSMobileAnalyticsProvider analyticsProvider;
-
 /**
  * Designated framework initializer.
  * @param cpid The customer specific CPID provided the customer by TNS Sifo. Cannot be nil nor empty.
  * @param appName The unique application name to identify the app. Cannot be nil nor empty.
- * @param trackPanelist Set this to true if you wish to track logged in SIFO panelists.
+ * @param trackingType Set to your appropriate tracking type.
  * @param webViewBased Set this to true if the application is primarily based on HTML/JavaScript running in web views
  * @param keychainAccessGroup set this to your keychain property, to share userId across applications with the same bundle seed.
- * @return The instance of the framework.
+ * @param additionals Set this to send any additional data to sync with panelist app.
  */
-+ (TSMobileAnalytics *)createInstanceWithCPID:(NSString *)cpid applicationName:(NSString *)appName trackPanelist:(BOOL)trackPanelist isWebViewBased:(BOOL)webViewBased keychainAccessGroup:(NSString *)keychainAccessGroup;
++ (void)initializeWithCPID:(NSString *)cpid
+           applicationName:(NSString *)appName
+              trackingType:(TrackingType)trackingType
+            isWebViewBased:(BOOL)webViewBased
+       keychainAccessGroup:(NSString *)keychainAccessGroup
+               additionals:(NSDictionary <NSString *, NSString *> *)additionals;
 
-+ (TSMobileAnalytics *)createInstanceWithCPID:(NSString *)cpid applicationName:(NSString *)appName trackPanelist:(BOOL)trackPanelist keychainAccessGroup:(NSString *)keychainAccessGroup;
++ (void)initializeWithCPID:(NSString *)cpid
+           applicationName:(NSString *)appName
+              trackingType:(TrackingType)trackingType
+            isWebViewBased:(BOOL)webViewBased
+       keychainAccessGroup:(NSString *)keychainAccessGroup;
 
-/**
- ** @return shared instance of the framework.
- */
-+ (TSMobileAnalytics *)sharedInstance;
++ (void)initializeWithCPID:(NSString *)cpid
+           applicationName:(NSString *)appName
+              trackingType:(TrackingType)trackingType
+       keychainAccessGroup:(NSString *)keychainAccessGroup;
 
 /**
  ** Enable logging.
@@ -36,31 +41,28 @@
 + (void)setLogPrintsActivated:(BOOL)logPrintsActivated;
 
 /**
- * Set this to true if you wish to track SIFO panelists only.
- */
-+ (void)setTrackPanelistOnly:(BOOL)trackPanelistOnly;
-
-/**
- * Validate your parameters before sending a tag.
- * @return TSInputValidation enum containing info about what parameter is faulty.
- */
-+ (int)validateInputParametersWithCategory:(NSString*)category
-                        contentID:(NSString*)contentID contentName:(NSString*)contentName;
-
-/**
  * Send a tag.
  * @param categories NSArray with string/s. 
- * @param contentName Optional The contentName for the tag.
  * @param contentID Optional The contentID for the tag.
  * @param completionBlock Optional block to be executed on completion.
  */
-+ (void)sendTagWithCategories:(NSArray*)categories contentName:(NSString *)contentName contentID:(NSString *)contentID completion:(void (^)(BOOL success, NSError *error))completionBlock;
++ (void)sendTagWithCategories:(NSArray <NSString *> *)categories
+                    contentID:(NSString *)contentID
+                   completion:(void (^)(BOOL success, NSError *error))completionBlock;
 
 /**
  * This method needs to be implemented in your app's appdelegate method with the same name, if you wish to track a panelist.
  * Forward the openURL:-call to the framework.
  */
-- (BOOL)application:(UIApplication *)application
++ (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
+
+/**
+ * Set main webview for webbased app.
+ * Must be set for framework to work properly with hybrid apps.
+ * If native app, don't use this.
+ */
++ (void)setWebView:(WKWebView *)webview;
+
 @end

@@ -1,5 +1,4 @@
-Kantar Sifo Mobile Analytics SDK for iOS
----
+# Kantar Sifo Mobile Analytics SDK for iOS
 This framework will enable your organisation to do mobile analytics and track user behaviour in your apps. 
 It is only usable if your organisations has a mobile analytics account at Kantar Sifo: 
 
@@ -16,120 +15,193 @@ Otherwise check instructions here: https://cocoapods.org/
 
 You also need to have the 'Sifo Internet' panelist app installed on your test device. The 'Sifo Internet' app holds your Sifo ID details. Otherwise look here: https://apps.apple.com/se/app/sifo-internet/id1015394138
 
-**Background:**
----
+## Background
+
 This framework tracks a user by making a formatted url call ('SendTag') with a cookie to a backend. Registered users are identified via a Sifo account and a UUID in the keychain (or NSUserDefaults if you don't want cross-app UUID sharing). The backend recognises the user via the cookie and the resource is tracked by the url. There a two types of users: Anonymous users and Orvesto panelists, who has opt-ed in to be tracked and is using a separat panelist app, called 'Sifo Internet'. It's optional to track all users or only panelist users.
 
 This framework will open the 'Sifo Internet' app at first launch, if installed. If the 'Sifo Internet' app is configured correctly, then the 'Sifo Internet' app will in turn open your app almost directly, with a cookie in the app url. This cookie will be stored by the framework. It will also create a UUID in the keychain/NSUserDefaults. This UUID can be shared among your apps using a shared keychain or NSUserDefaults. After a successfull initialisation, the framework is ready to send your tracking tags to the analytics backend. You can track these tags using your tools obtained from Kantar Sifo upon registration.
 
-The framework will refresh the cookie by repeating the open the 'Sifo Internet' app procedure every third month.
-
 To make this work, there a few things needed:
 1. Allow your app to open the 'Sifo Internet' app in Info.plist
 2. Add a shared keychain id to an Entitlements file (Optional)
-3. Add the code below to the AppDelegate
+3. Add the code below to integrate framework
 4. Add SendTags according to your tracking needs
 
-If you are using WKWebViews in the app, the framework has functionality to automatically transmit the Sifo Internet cookie to the WKWebView. Please read the documentation for more details.
+## Release notes
 
-**Implementation instructions:**
----
-Code implementation instructions below are in **Swift** only, to keep this instruction short.  **Objective-C** examples are available in the Documentation folder. There are sample applications in both Ojective-C and Swift in Samples folder.
+- Added support for iOS 14.
+- Sifo panelists now sync with IDFA and IDFV.
+- SDK can now detect faulty integration and warn about it.
+- Bug fixes and improvements.
 
-Add this to your Podfile:
-``` SWIFT
-source 'https://github.com/kantarsifo/kantar-sifo-mobile-analytics-podspec.git'
-pod 'TSMobileAnalytics' 
-```
-and then run `pod install`
+## Integrate - Framework
 
-Add this to AppDelegate:
+Minimum iOS deployment target: 9.0
+
+**1. Add library to project**
+
+Cocoapods:
+``` Ruby
+pod 'TSMobileAnalytics'
+``` 
+
+Manually:
+1. Add MobileAnalytics.framework to your project and target.
+2. In Build Phases -> Link Binary With Libraries, add Security.framework.
+
+**2. Initialize the framework**
+
+To support iOS 14 properly, `ATTrackingManager.requestTrackingAuthorization` must first been requested before initalizing the framework:
 ``` SWIFT
 import TSMobileAnalytics
-```
-in `func application ... didFinishLaunchingWithOptions...` add this:
-``` SWIFT
-    TSMobileAnalytics.createInstance(withCPID: "CPID", applicationName: "APPURL", 
-        trackPanelist: true, isWebViewBased: "ISWEBVIEWBASED", keychainAccessGroup: "KEYCHAINACCESSGROUP")
-    TSMobileAnalytics.setLogPrintsActivated(false) //true will print to the debug log
-```
-This will initate the TSMobileAnalytics and start the 'Sifo Internet' app. Replace the variables above.
+import AppTrackingTransparency
 
-**CPID** : Your Kantar Sifo Analytics id  
-**APPURL** : Your app CFBundleURLSchemes, like 'twitter' or 'com.xxx.myapp'   
-**ISWEBVIEWBASED** : Set this to True if the app’s primary interface is displayed in one or many web views.
-**KEYCHAINACCESSGROUP** : (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to **nil**
-
-
-In order to save the cookie from the 'Sifo Internet' app, this function is needed in the AppDelegate: 
-``` SWIFT
-    func application(_ app: UIApplication, open url: URL, 
-        options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
-        return TSMobileAnalytics.sharedInstance().application(app, open: url, options: options)
-    }
-```
-
-With this, code is complete. Now follows Shared Keychain setup to make inter-app communcation possible
-
-----
-NOTE: If you don't wan't to use Shared Keychain, skip this part!
-
-Set `Keychain Sharing` to `ON` in the target Capabilities settings
-This corresponds to the **KEYCHAINACCESSGROUP** above
-
-Change this line in the `.entitlements` file if you need something else than the default:
-``` XML
-	<array>
-		<string>$(AppIdentifierPrefix)com.xxx.myapp_or_shared_keychain</string>
-	</array>
-```
-
-----
-This part is needed so your app can open the Internetpanelen app (panelists only)
-To allow your app to open the 'Sifo Internet' app, add this to Info.plist
-``` XML
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>se.tns-sifo.internetpanelen</string>
-		<string>se.tns-sifo.sifopanelen</string>
-	</array>
-```
-
-To enable the 'Sifo Internet' app to open your app, add this to Info.plist
-`com.xxx.myappscheme` corresponds to the **APPURL** above
-``` XML
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.xxx.myapp</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.xxx.myappscheme</string>
-			</array>
-		</dict>
-	</array>
-```
-
-Add a custom URL scheme to your app that matches the bundle identifier of your application plus ".tsmobileanalytics". For example, if your app bundle identifier is "se.nagonting", it should be "se.nagonting.tsmobileanalytics". You can find your app’s bundle identifier in the ”General” tab of your application’s target. You then enter this bundle identifier in all lowercase letters as a custom URL-scheme under the ”Info” tab for your application’s target.
-
-Now all setup is complete!
-
-----
-The only thing left to do is to create **SendTag** tracking calls formatted according to the documentation.
-
-**Example:**
-``` SWIFT
-        TSMobileAnalytics.sendTag(withCategories: ["MyCategory"], contentName: "", 
-        contentID: "myContentID") { (success, error) in
-            if let tError = error {
-                // Handle error.
-                print("Error: \(tError.localizedDescription)")
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { (_) in
+                TSMobileAnalytics.initialize(withCPID: ...,
+                                             applicationName: ...,
+                                             trackingType: ...,
+                                             isWebViewBased: ...,
+                                             keychainAccessGroup: ...)
             }
+        } else {
+            TSMobileAnalytics.initialize(withCPID: ...,
+                                         applicationName: ...,
+                                         trackingType: ...,
+                                         isWebViewBased: ...,
+                                         keychainAccessGroup: ...)
         }
+        return true
+    }
+}
 ```
 
-**Please read the documentation for more detailed instructions**
+If you for some reason do not support iOS 14 then you can initalize the framework without the `AppTrackingTransparency` check:
+``` SWIFT
+import TSMobileAnalytics
 
-----
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        TSMobileAnalytics.initialize(withCPID: ...,
+                                     applicationName: ...,
+                                     trackingType: ...,
+                                     isWebViewBased: ...,
+                                     keychainAccessGroup: ...)
+        return true
+    }
+}
+```
 
+* `CPID` - Your Kantar Sifo Analytics id.
+* `ApplicationName` - Name of your app.
+* `IsWebViewBased` - Set this to `true` if the app’s primary interface is displayed in one or many webviews.
+* `KeychainAccessGroup` - (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to `nil`.
+
+## Integration - Panelist support
+
+Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. To allow the framework to integrate with the Panelist app you need to follow these additional integration steps.
+
+**1. Add url scheme, query scheme and cross website tracking usage.**
+
+Update your `info.plist` to include.
+Add query scheme:
+``` XML
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>se.tns-sifo.internetpanelen</string>
+</array>
+```
+
+Add url scheme with `<your_bundle_id>.tsmobileanalytics`:
+``` XML
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>None</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>my.example.id.tsmobileanalytics</string>
+    </array>
+  </dict>
+</array>
+```
+
+Add `NSCrossWebsiteTrackingUsageDescription`:
+``` XML
+<key>NSCrossWebsiteTrackingUsageDescription</key>
+<string>...</string>
+```
+
+Add `NSUserTrackingUsageDescription`:
+``` XML
+<key>NSUserTrackingUsageDescription</key>
+<string>...</string>
+```
+
+**2. Update Scene or App Delegate.**
+
+To have this custom URL scheme picked up by the framework you have to implement the relevant method. If your app has a AppDelegate and a SceneDelegate then you should implement the SceneDelegate version. If your app only has a AppDelegate then implement the AppDelegate version.
+
+SceneDelegate:
+``` SWIFT
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+  for ctx in URLContexts {
+    TSMobileAnalytics.application(UIApplication.shared, open: ctx.url, options: [:])
+  }
+}
+```
+
+AppDelegate:
+``` SWIFT
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+  return TSMobileAnalytics.application(app, open: url, options: options)
+}
+```
+
+**3. Set webview (hybrid apps only).**
+
+If you app is webview based, you need to tell the framework which webview is your main webview:
+``` SWIFT
+TSMobileAnalytics.setWebView(self.webView)
+```
+
+**4. Shared Keychain (optional).**
+
+If you provided a shared keychain access group.
+Set `Keychain Sharing` to `ON` in the target Capabilities settings
+
+## Sending tags
+
+To get a good measure of the usage, your application should send a tag every time a new view or page of content is shown to the user. This tag should contain information about what content the user is seeing. For example when the user opens the application and its main view is shown, a tag should be sent. When the user shows a list, an article, a video or some other page in your application, another tag should be sent, and so on.
+
+Streaming content is measured differently from regular content pages. “Stream started” is defined as when the actual content starts playing, after any pre-roll material that may precede it.
+
+You need to use a unique value for “Stream started”, and use that value consistently across the app. We recommend that you synchronize this with the value you use to track “Stream started” on the web. Our recommendations is that you use one of the following values: `play`, `stream` or `webbtv`.
+
+The framework can help you with the whole process of sending them to the server. The only thing it needs from you is for you to tell it when a view has been shown, and what content it has.
+
+To send a tag:
+``` SWIFT
+TSMobileAnalytics.sendTag(withCategories: ...,
+                          contentID: ...) { (success, error) in }
+```
+
+* Categories is an array of strings.
+* Id is a string with the identifier of the current content.
+
+## Implementation check
+
+Before the app is submitted to App Store, tests need to be performed according to instructions provided by Kantar Sifo. To validate that SDK collect panelist data properly. Please contact Kantar Sifo.
+
+## Contact information
+
+Please send any questions or feedback to:
+
+[*peter.andersson@kantar.com*](mailto:peter.andersson@kantar.com)
++46 (0)701 842 372
+
+[*info@kantarsifo.com*](mailto:info@kantarsifo.com)
++46 (0)8 507 420 00
