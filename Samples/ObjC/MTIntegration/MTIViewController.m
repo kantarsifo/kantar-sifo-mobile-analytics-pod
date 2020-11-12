@@ -10,26 +10,24 @@
 
 - (IBAction)sendTag:(id)sender {
     [TSMobileAnalytics sendTagWithCategories:@[@"category-testios"]
-                                 contentName:@""
                                    contentID:@"123-contentID"
-                                  completion:^(BOOL success, NSError *error) {
-                                      if (error) {
-                                          // Handle error.
-                                          NSLog(@"Error: %@", error.localizedDescription);
-                                      }
-                                  }];
+                                  completion:^(BOOL success, NSError * _Nullable error) {
+        if (error) {
+            // Handle error.
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [TSMobileAnalytics sendTagWithCategories:@[@"category-testios"]
-                                 contentName:@""
                                    contentID:@"123-contentID"
-                                  completion:^(BOOL success, NSError *error) {
-                                      if (error) {
-                                          // Handle error
-                                          NSLog(@"Error: %@", error.localizedDescription);
-                                      }
-                                  }];
+                                  completion:^(BOOL success, NSError * _Nullable error) {
+        if (error) {
+            // Handle error.
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void)viewDidLoad {

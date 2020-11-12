@@ -64,5 +64,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCrossWebsiteTrackingUsageDescription</key>
+    <string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 </dict>
 </plist>

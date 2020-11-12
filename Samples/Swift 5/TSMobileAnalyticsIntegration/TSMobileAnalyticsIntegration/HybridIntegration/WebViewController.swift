@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TSMobileAnalytics
 
 class WebViewController: UIViewController {
     
@@ -20,8 +21,14 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TSMobileAnalytics.addWebview(self.webView)
         self.layoutWebView()
         self.loadWebView()
+    }
+    
+    deinit {
+        TSMobileAnalytics.removeWebview(self.webView)
     }
 
     func loadWebView() {

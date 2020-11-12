@@ -15,8 +15,14 @@
     self.window.rootViewController = self.viewController;
     
     [self.window makeKeyAndVisible];
-    [TSMobileAnalytics createInstanceWithCPID:@"2383" applicationName:@"mobil.sifo-test" trackPanelist:YES keychainAccessGroup:@"mo.dyna.TSMobileAnalyticsIntegration"];
+    
     [TSMobileAnalytics setLogPrintsActivated:YES];
+    [TSMobileAnalytics initializeWithCPID:@"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                          applicationName:@"Sample app"
+                             trackingType:TrackUsersAndPanelists
+                           isWebViewBased:NO
+                      keychainAccessGroup:nil
+                              additionals:nil];
     
     return YES;
 }
@@ -52,12 +58,12 @@
 }
 
 
-- (BOOL)application:(UIApplication *)application 
-            openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-        
-    return [[TSMobileAnalytics sharedInstance] application:application
-                                              openURL:url sourceApplication:sourceApplication annotation:annotation];
-    
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    return [TSMobileAnalytics application:application
+                                  openURL:url
+                                  options:options];
 }
 
 @end

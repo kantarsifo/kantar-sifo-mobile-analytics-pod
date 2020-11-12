@@ -29,6 +29,11 @@ To make this work, there a few things needed:
 
 ## Release notes
 
+5.0.2
+- SDK now asks for tracking permission on iOS 14 for panelists.
+- Added support for multiple webviews.
+
+5.0.1
 - Added support for iOS 14.
 - Sifo panelists now sync with IDFA and IDFV.
 - SDK can now detect faulty integration and warn about it.
@@ -55,37 +60,7 @@ Manually:
 
 **2. Initialize the framework**
 
-To support iOS 14 properly, `ATTrackingManager.requestTrackingAuthorization` must first been requested before initalizing the framework:
 ``` SWIFT
-import TSMobileAnalytics
-import AppTrackingTransparency
-
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { (_) in
-                TSMobileAnalytics.initialize(withCPID: ...,
-                                             applicationName: ...,
-                                             trackingType: ...,
-                                             isWebViewBased: ...,
-                                             keychainAccessGroup: ...)
-            }
-        } else {
-            TSMobileAnalytics.initialize(withCPID: ...,
-                                         applicationName: ...,
-                                         trackingType: ...,
-                                         isWebViewBased: ...,
-                                         keychainAccessGroup: ...)
-        }
-        return true
-    }
-}
-```
-
-If you for some reason do not support iOS 14 then you can initalize the framework without the `AppTrackingTransparency` check:
-``` SWIFT
-import TSMobileAnalytics
-
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         TSMobileAnalytics.initialize(withCPID: ...,
@@ -99,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 * `CPID` - Your Kantar Sifo Analytics id.
-* `ApplicationName` - Name of your app.
+* `ApplicationName` - Name of your app, can be anything you like that makes sense.
 * `IsWebViewBased` - Set this to `true` if the app’s primary interface is displayed in one or many webviews.
 * `KeychainAccessGroup` - (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to `nil`.
 
@@ -136,13 +111,13 @@ Add url scheme with `<your_bundle_id>.tsmobileanalytics`:
 Add `NSCrossWebsiteTrackingUsageDescription`:
 ``` XML
 <key>NSCrossWebsiteTrackingUsageDescription</key>
-<string>...</string>
+<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 ```
 
 Add `NSUserTrackingUsageDescription`:
 ``` XML
 <key>NSUserTrackingUsageDescription</key>
-<string>...</string>
+<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 ```
 
 **2. Update Scene or App Delegate.**
@@ -167,9 +142,14 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 
 **3. Set webview (hybrid apps only).**
 
-If you app is webview based, you need to tell the framework which webview is your main webview:
+If you app is webview based, you need to tell the framework which webviews to track by adding them:
 ``` SWIFT
-TSMobileAnalytics.setWebView(self.webView)
+TSMobileAnalytics.addWebview(webView)
+```
+
+And stop tracking it, if it's completely removed from the view hierarchy:
+``` SWIFT
+TSMobileAnalytics.removeWebview(webView)
 ```
 
 **4. Shared Keychain (optional).**

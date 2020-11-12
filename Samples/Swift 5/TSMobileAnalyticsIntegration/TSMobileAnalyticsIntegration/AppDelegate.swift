@@ -21,19 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         //Initiate TSMobileAnalytics
-        TSMobileAnalytics.createInstance(withCPID: "2383", applicationName: "mobil.sifo-test", trackPanelist: true, keychainAccessGroup: "mo.dyna.TSMobileAnalyticsIntegration")
+        
         TSMobileAnalytics.setLogPrintsActivated(true)
+        TSMobileAnalytics.initialize(withCPID: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                                     applicationName: "Sample app",
+                                     trackingType: .TrackUsersAndPanelists,
+                                     isWebViewBased: true,
+                                     keychainAccessGroup: "mo.dyna.TSMobileAnalyticsIntegration",
+                                     additionals: nil)
         
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return TSMobileAnalytics.sharedInstance().application(app, open: url, options: options)
+        return TSMobileAnalytics.application(app, open: url, options: options)
     }
-    
-    // Deprecated by Apple in iOS9:
-    // func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-    //     return TSMobileAnalytics.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    // }
 }
 

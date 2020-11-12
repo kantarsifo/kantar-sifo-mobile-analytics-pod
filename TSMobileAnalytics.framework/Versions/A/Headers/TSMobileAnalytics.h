@@ -10,7 +10,7 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
 /**
  * Designated framework initializer.
  * @param cpid The customer specific CPID provided the customer by TNS Sifo. Cannot be nil nor empty.
- * @param appName The unique application name to identify the app. Cannot be nil nor empty.
+ * @param appName The unique application name to identify the app. Cannot be nil nor empty. Can be anything you like that makes sense.
  * @param trackingType Set to your appropriate tracking type.
  * @param webViewBased Set this to true if the application is primarily based on HTML/JavaScript running in web views
  * @param keychainAccessGroup set this to your keychain property, to share userId across applications with the same bundle seed.
@@ -47,7 +47,7 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
  * @param completionBlock Optional block to be executed on completion.
  */
 + (void)sendTagWithCategories:(nonnull NSArray <NSString *> *)categories
-                    contentID:(nonnull NSString *)contentID
+                    contentID:(nullable NSString *)contentID
                    completion:(nullable void (^)(BOOL success, NSError * _Nullable error))completionBlock;
 
 /**
@@ -59,10 +59,16 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
             options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
 
 /**
- * Set main webview for webbased app.
- * Must be set for framework to work properly with hybrid apps.
- * If native app, don't use this.
+ * Add webview to be part of the tracking.
+ * Webview must be added for framework to be tracked properly.
+ * Only add webviews that you actually want to track.
  */
-+ (void)setWebView:(nullable WKWebView *)webview;
++ (void)addWebview:(nonnull WKWebView *)webview;
+
+/**
+ * Remove webview from the tracking.
+ * Remove webview when the webview is completly removed from the view hierarchy (not just hidden).
+ */
++ (void)removeWebview:(nonnull WKWebView *)webview;
 
 @end

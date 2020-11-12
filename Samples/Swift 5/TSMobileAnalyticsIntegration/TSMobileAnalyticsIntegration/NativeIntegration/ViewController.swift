@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        TSMobileAnalytics.sendTag(withCategories: ["category-testios"], contentName: "", contentID: "123-contentID") { (success, error) in
+        TSMobileAnalytics.sendTag(withCategories: ["category-testios"],
+                                  contentID: "123-contentID") { (success, error) in
             if let tError = error {
                 // Handle error.
                 print("Error: \(tError.localizedDescription)")
@@ -22,8 +23,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendTag(_ sender: AnyObject) {
-    
-        TSMobileAnalytics.sendTag(withCategories: ["category-testios"], contentName: "", contentID: "123-contentID") { (success, error) in
+        TSMobileAnalytics.sendTag(withCategories: ["category-testios"],
+                                  contentID: "123-contentID") { (success, error) in
             if let tError = error {
                 // Handle error.
                 print("Error: \(tError.localizedDescription)")

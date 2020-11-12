@@ -25,9 +25,13 @@
     
     [self.window makeKeyAndVisible];
 
-    [TSMobileAnalytics createInstanceWithCPID:@"2383" applicationName:@"mobil.sifo-test" trackPanelist:YES keychainAccessGroup:@"mo.dyna.TSMobileAnalyticsIntegration"];
-
     [TSMobileAnalytics setLogPrintsActivated:YES];
+    [TSMobileAnalytics initializeWithCPID:@"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                          applicationName:@"Sample app"
+                             trackingType:TrackUsersAndPanelists
+                           isWebViewBased:YES
+                      keychainAccessGroup:nil
+                              additionals:nil];
 
     return YES;
 }
@@ -70,18 +74,9 @@
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-
-    NSLog(@"%@ %@", url, sourceApplication);
-  return  [[TSMobileAnalytics sharedInstance] application:application openURL:url options:options];
-
-// Deprecated by Apple in iOS9:
-// - (BOOL)application:(UIApplication *)application 
-//             openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    
-//     NSLog(@"%@ %@", url, sourceApplication);
-//     return [[TSMobileAnalytics sharedInstance] application:application
-//                                               openURL:url sourceApplication:sourceApplication annotation:annotation];
-    
-// }
+    return [TSMobileAnalytics application:application
+                                  openURL:url
+                                  options:options];
+}
 
 @end

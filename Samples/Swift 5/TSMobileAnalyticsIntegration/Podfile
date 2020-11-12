@@ -3,17 +3,11 @@ platform :ios, '9.0'
 source 'https://github.com/kantarsifo/kantar-sifo-mobile-analytics-podspec.git'
 
 target 'NativeIntegration' do
-
   use_frameworks!
-
   pod 'TSMobileAnalytics'
+end
 
-  target 'HybridIntegration' do
-    inherit! :search_paths
-  end
-
-  target 'TSMobileAnalyticsIntegrationTests' do
-    inherit! :search_paths
-  end
-
+target 'HybridIntegration' do
+  use_frameworks!
+  pod 'TSMobileAnalytics'
 end

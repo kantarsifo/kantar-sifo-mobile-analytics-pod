@@ -36,16 +36,14 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>None</string>
-			<key>CFBundleURLName</key>
-			<string>mo.dyna.TSMobileAnalyticsIntegration</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mo.dyna.TSMobileAnalyticsIntegration.tsmobileanalytics</string>
+				<string>mo.dyna.TSMobileAnalyticsHybridIntergration.tsmobileanalytics</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1BD</string>
+	<string>1C6</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>se.tns-sifo.internetpanelen</string>
@@ -58,6 +56,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCrossWebsiteTrackingUsageDescription</key>
+	<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -27,11 +27,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [TSMobileAnalytics addWebview:self.webView];
+    
     // Do any additional setup after loading the view, typically from a nib.
 
     self.urlArray = [NSArray arrayWithObjects:@"https://google.com/", @"http://expressen.se/", @"https://mobil.dn.se/", nil];
 }
 
+- (void)dealloc {
+    [TSMobileAnalytics removeWebview:self.webView];
+}
 
 #pragma mark -
 #pragma mark UITableViewDataSource
