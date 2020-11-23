@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. To allow the framework to integrate with the Panelist app you need to follow these additional integration steps.
 
-**1. Add url scheme, query scheme and cross website tracking usage.**
+**1. Add url scheme, query scheme and user tracking usage.**
 
 Update your `info.plist` to include.
 Add query scheme:
@@ -108,11 +108,7 @@ Add url scheme with `<your_bundle_id>.tsmobileanalytics`:
 </array>
 ```
 
-Add `NSCrossWebsiteTrackingUsageDescription`:
-``` XML
-<key>NSCrossWebsiteTrackingUsageDescription</key>
-<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
-```
+To track panelists properly add the following section to info plist. All data collected is used anonymously and used for statistics, data is not used for marketing.
 
 Add `NSUserTrackingUsageDescription`:
 ``` XML

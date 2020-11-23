@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = 'TSMobileAnalytics'
-  s.version             = '5.0.2'
+  s.version             = '5.0.3'
 
   s.summary             = 'TSMobileAnalytics'
   s.homepage            = 'http://kantarsifo.se'
