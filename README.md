@@ -29,6 +29,9 @@ To make this work, there a few things needed:
 
 ## Release notes
 
+5.0.3
+- App start tag sent for apps.
+
 5.0.2
 - SDK now asks for tracking permission on iOS 14 for panelists.
 - Added support for multiple webviews.
@@ -113,7 +116,7 @@ To track panelists properly add the following section to info plist. All data co
 Add `NSUserTrackingUsageDescription`:
 ``` XML
 <key>NSUserTrackingUsageDescription</key>
-<string>All data samlas in och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
+<string>All data samlas in av Kantar Sifo och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 ```
 
 **2. Update Scene or App Delegate.**
