@@ -27,7 +27,19 @@ To make this work, there a few things needed:
 3. Add the code below to integrate framework
 4. Add SendTags according to your tracking needs
 
+## Permissions
+
+What permissions does the Sifo SDK require?
+
+The Sifo SDK is happy with whatever permissions your app uses.
+
+* If your app requests access to IDFA through the App Tracking Transparency framework the Sifo SDK will also get access to IDFA.
+* If your app does not request access to IDFA the Sifo SDK will use the IDFV to track panelists.
+
 ## Release notes
+
+5.0.4
+- SDK not longer uses AppTrackingTransparency framework.
 
 5.0.3
 - App start tag sent for apps.
@@ -78,12 +90,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 * `CPID` - Your Kantar Sifo Analytics id.
 * `ApplicationName` - Name of your app, can be anything you like that makes sense.
+* `TrackingType` - Either `TrackPanelistsOnly` or `TrackUsersAndPanelists`.
 * `IsWebViewBased` - Set this to `true` if the app’s primary interface is displayed in one or many webviews.
 * `KeychainAccessGroup` - (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to `nil`.
 
 ## Integration - Panelist support
 
-Panelist app integration is available to both WebView based apps and native apps. The purpose of this integration is to identify the user as a certain panelist. To allow the framework to integrate with the Panelist app you need to follow these additional integration steps.
+The purpose of this integration is to identify the user as a certain panelist. To allow the framework to integrate with the Panelist app you need to follow these additional integration steps.
 
 **1. Add url scheme, query scheme and user tracking usage.**
 
@@ -109,14 +122,6 @@ Add url scheme with `<your_bundle_id>.tsmobileanalytics`:
     </array>
   </dict>
 </array>
-```
-
-To track panelists properly add the following section to info plist. All data collected is used anonymously and used for statistics, data is not used for marketing.
-
-Add `NSUserTrackingUsageDescription`:
-``` XML
-<key>NSUserTrackingUsageDescription</key>
-<string>All data samlas in av Kantar Sifo och behandlas anonymt. Endast för statistik om appar. Data används inte för marknadsföring.</string>
 ```
 
 **2. Update Scene or App Delegate.**
