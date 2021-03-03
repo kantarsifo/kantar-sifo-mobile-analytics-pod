@@ -29,8 +29,6 @@ extern NSString * const userdefaultsSdkVersionKey;
 extern NSString * const userdefaultsTrackingStatusKey;
 extern NSString * const userdefaultsLastSyncKey;
 
-extern NSString * const secretOptionTrackIdfa;
-extern NSString * const secretOptionTrackIdfv;
 extern NSString * const secretOptionSyncWithBackendFirst;
 extern NSString * const secretOptionUseJsonUrlSchemeSyncFormat;
 extern NSString * const secretOptionForceReinitialize;

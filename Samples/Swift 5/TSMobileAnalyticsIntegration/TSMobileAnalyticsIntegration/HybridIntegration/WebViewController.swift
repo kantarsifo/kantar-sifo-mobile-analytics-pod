@@ -11,7 +11,7 @@ import TSMobileAnalytics
 
 class WebViewController: UIViewController {
     
-    var webView = UIWebView()
+    var webView = WKWebView()
     
     var request: URLRequest? {
         didSet {
@@ -33,7 +33,7 @@ class WebViewController: UIViewController {
 
     func loadWebView() {
         if let req = self.request , self.isViewLoaded {
-            self.webView.loadRequest(req)
+            self.webView.load(req)
         }
     }
     

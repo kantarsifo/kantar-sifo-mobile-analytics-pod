@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TSMobileAnalytics.initialize(withCPID: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                                      applicationName: "Sample app",
                                      trackingType: .TrackUsersAndPanelists,
+                                     enableSystemIdentifierTracking: false,
                                      isWebViewBased: true,
                                      keychainAccessGroup: "mo.dyna.TSMobileAnalyticsIntegration",
                                      additionals: nil)

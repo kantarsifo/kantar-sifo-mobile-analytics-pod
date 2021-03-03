@@ -20,6 +20,7 @@
     [TSMobileAnalytics initializeWithCPID:@"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           applicationName:@"Sample app"
                              trackingType:TrackUsersAndPanelists
+           enableSystemIdentifierTracking:NO
                            isWebViewBased:NO
                       keychainAccessGroup:nil
                               additionals:nil];

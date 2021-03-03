@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
 + (void)initializeWithCPID:(nonnull NSString *)cpid
            applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
+enableSystemIdentifierTracking:(BOOL)enableSystemIdentifierTracking
             isWebViewBased:(BOOL)webViewBased
        keychainAccessGroup:(nullable NSString *)keychainAccessGroup
                additionals:(nullable NSDictionary <NSString *, NSString *> *)additionals;
@@ -26,12 +27,14 @@ typedef NS_ENUM(NSUInteger, TrackingType) {
 + (void)initializeWithCPID:(nonnull NSString *)cpid
            applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
+enableSystemIdentifierTracking:(BOOL)enableSystemIdentifierTracking
             isWebViewBased:(BOOL)webViewBased
        keychainAccessGroup:(nullable NSString *)keychainAccessGroup;
 
 + (void)initializeWithCPID:(nonnull NSString *)cpid
            applicationName:(nonnull NSString *)appName
               trackingType:(TrackingType)trackingType
+enableSystemIdentifierTracking:(BOOL)enableSystemIdentifierTracking
        keychainAccessGroup:(nullable NSString *)keychainAccessGroup;
 
 /**
