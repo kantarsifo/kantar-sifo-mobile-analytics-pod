@@ -15,6 +15,10 @@ using Kantar Sifo’s services. The SDK contains three folders:
 
 RELEASE NOTES:
 
+5.1.1 2021-04-14
+- Fix memory leak that occurred in some specific scenarios.
+- Add app version info to tags and cookie.
+
 5.1.0  2021-03-02
 - Optional setting (enableSystemIdentifierTracking) introduced to give app developers control if system identifiers can be used or not.
 - Bug fixes
