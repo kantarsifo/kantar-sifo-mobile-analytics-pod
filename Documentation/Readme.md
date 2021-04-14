@@ -40,6 +40,10 @@ The Sifo SDK is happy with whatever permissions your app uses.
 
 ## Release notes (latest; see `release-notes.txt` for more)
 
+5.1.1
+- Fix memory leak that occurred in some specific scenarios.
+- Add app version info to tags and cookie.
+
 5.1.0
 - Optional setting (enableSystemIdentifierTracking) introduced to give app developers control over whether system identifiers can be used or not.
 - Bug fixes
@@ -103,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 * `TrackingType` - Either `TrackPanelistsOnly` or `TrackUsersAndPanelists`.
 * `enableSystemIdentifierTracking` - Determines if the SDK will attempt to use system identifiers.
   * `false` - This setting is sufficient for the Orvesto Internet measurement, the measurement will use Kantar Sifo panelist ID:s only.
-  * `true` - This setting is mandatory if you participate in the MMS measurement. The Sifo SDK will attempt to fetch IDFA and IDFV (the SDK will never activate the Application Tracking Transparency popup, it is the responsibility for your app).
+  * `true` - This setting is mandatory if you participate in the MMS measurement. The Sifo SDK will use the identifiers your app have received consent for by the user (the SDK will never activate the Application Tracking Transparency popup, it is the responsibility for your app).
 * `IsWebViewBased` - Set this to `true` if the app’s primary interface is displayed in one or many webviews.
 * `KeychainAccessGroup` - (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to `nil`.
 * `additionals` `comscore_client_id` - (Mandatory for the MMS measurement) Please contact Kantar Sifo for details (see Contact Information below).
@@ -158,9 +162,9 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 }
 ```
 
-**3. Set webview (hybrid apps only).**
+**3. Set webview (hybrid apps and other apps containing content in webviews).**
 
-If you app is webview based, you need to tell the framework which webviews to track by adding them:
+If your app is webview-based, or contains content in occasional webviews that should be tracked, you need to tell the framework which webviews to track by adding them:
 ``` SWIFT
 TSMobileAnalytics.addWebview(webView)
 ```

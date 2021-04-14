@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+
+source 'https://github.com/kantarsifo/kantar-sifo-mobile-analytics-podspec.git'
+
+target 'TSMobileAnalyticsIntegration' do
+  use_frameworks!
+  pod 'TSMobileAnalytics'
+end
+
+target 'TSMobileTaggingHybridIntegration' do
+  use_frameworks!
+  pod 'TSMobileAnalytics'
+end

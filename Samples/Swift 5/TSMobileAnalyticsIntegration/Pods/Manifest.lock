@@ -1,0 +1,16 @@
+PODS:
+  - TSMobileAnalytics (5.0.4)
+
+DEPENDENCIES:
+  - TSMobileAnalytics
+
+SPEC REPOS:
+  https://github.com/kantarsifo/kantar-sifo-mobile-analytics-podspec.git:
+    - TSMobileAnalytics
+
+SPEC CHECKSUMS:
+  TSMobileAnalytics: 056255cd4fafdad03fbef8d6b58f48ad20be4e6f
+
+PODFILE CHECKSUM: bbf463142eaa6e34310964bb2f347797fa449bf4
+
+COCOAPODS: 1.10.1

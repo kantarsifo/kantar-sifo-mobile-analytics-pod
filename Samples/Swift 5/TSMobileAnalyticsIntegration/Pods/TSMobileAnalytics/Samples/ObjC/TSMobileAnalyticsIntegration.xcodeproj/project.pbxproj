@@ -1,0 +1,1031 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D90D28A1B8B370A0037A326 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D90D2891B8B370A0037A326 /* Default-568h@2x.png */; };
+		4D90D28B1B8B3B540037A326 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D90D2891B8B370A0037A326 /* Default-568h@2x.png */; };
+		5B378AC37E5059C49748534F /* Pods_TSMobileTaggingHybridIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA53BA674FB26389A465C04 /* Pods_TSMobileTaggingHybridIntegration.framework */; };
+		6A56019A62C265E4729BC82E /* Pods_TSMobileAnalyticsIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5B865EB2B69F7B7329C15F /* Pods_TSMobileAnalyticsIntegration.framework */; };
+		995DB43B1CBD273700106417 /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */; };
+		99FA81DE1CB6862100962865 /* TSMobileAnalyticsIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA81DD1CB6862100962865 /* TSMobileAnalyticsIntegrationTests.m */; };
+		99FA81EC1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA81EB1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests.m */; };
+		99FA81F31CB689E600962865 /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */; };
+		99FA81F41CB689F300962865 /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */; };
+		D5ED92E377D7D621060D496D /* Pods_TSMobileAnalyticsIntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B62248ABE0162E91FF3E83 /* Pods_TSMobileAnalyticsIntegrationTests.framework */; };
+		E310E03E15825053005C2F10 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E310E03915825014005C2F10 /* icon@2x.png */; };
+		E310E04015825063005C2F10 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E310E03415824F9C005C2F10 /* icon@2x.png */; };
+		E310E04115825066005C2F10 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E310E03315824F9C005C2F10 /* icon.png */; };
+		E310E04215825089005C2F10 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E310E03815825014005C2F10 /* icon.png */; };
+		E32D8E951545854A000C9F29 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32D8E941545854A000C9F29 /* Security.framework */; };
+		E33FAE751536CEF1005B48ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCB1536C5CA008CF626 /* UIKit.framework */; };
+		E33FAE761536CEF1005B48ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCD1536C5CA008CF626 /* Foundation.framework */; };
+		E33FAE771536CEF1005B48ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCF1536C5CA008CF626 /* CoreGraphics.framework */; };
+		E33FAE891536CEF1005B48ED /* MTHIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E33FAE871536CEF1005B48ED /* MTHIViewController.xib */; };
+		E33FAE8D1536CFCD005B48ED /* MTHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FAE851536CEF1005B48ED /* MTHIViewController.m */; };
+		E33FAE8E1536CFD1005B48ED /* MTHIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FAE821536CEF1005B48ED /* MTHIAppDelegate.m */; };
+		E33FAE8F1536CFF1005B48ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E33FAE7B1536CEF1005B48ED /* InfoPlist.strings */; };
+		E33FAE901536D000005B48ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FAE7E1536CEF1005B48ED /* main.m */; };
+		E3765FAF1580FDDA00578891 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32D8E941545854A000C9F29 /* Security.framework */; };
+		E3856BCC1536C5CA008CF626 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCB1536C5CA008CF626 /* UIKit.framework */; };
+		E3856BCE1536C5CA008CF626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCD1536C5CA008CF626 /* Foundation.framework */; };
+		E3856BD01536C5CA008CF626 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3856BCF1536C5CA008CF626 /* CoreGraphics.framework */; };
+		E3856BD61536C5CA008CF626 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3856BD41536C5CA008CF626 /* InfoPlist.strings */; };
+		E3856BD81536C5CA008CF626 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3856BD71536C5CA008CF626 /* main.m */; };
+		E3856BDC1536C5CA008CF626 /* MTIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3856BDB1536C5CA008CF626 /* MTIAppDelegate.m */; };
+		E3856BDF1536C5CA008CF626 /* MTIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3856BDE1536C5CA008CF626 /* MTIViewController.m */; };
+		E3856BE21536C5CA008CF626 /* MTIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3856BE01536C5CA008CF626 /* MTIViewController.xib */; };
+		E8A4C7E61C97058100B72E6C /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */; };
+		F764E0EB0A41734A50845771 /* Pods_TSMobileTaggingHybridIntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3642D7BD409320BC54CFBD /* Pods_TSMobileTaggingHybridIntegrationTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99FA81E01CB6862100962865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3856BBE1536C5CA008CF626 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3856BC61536C5CA008CF626;
+			remoteInfo = TSMobileTaggingIntegration;
+		};
+		99FA81EE1CB6863A00962865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3856BBE1536C5CA008CF626 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E33FAE721536CEF1005B48ED;
+			remoteInfo = TSMobileTaggingHybridIntegration;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B5B865EB2B69F7B7329C15F /* Pods_TSMobileAnalyticsIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSMobileAnalyticsIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA53BA674FB26389A465C04 /* Pods_TSMobileTaggingHybridIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSMobileTaggingHybridIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E36DA6D0935498ADDB83527 /* Pods-TSMobileAnalyticsIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegration/Pods-TSMobileAnalyticsIntegration.debug.xcconfig"; sourceTree = "<group>"; };
+		490E4316D36157C15B97EB1F /* Pods-TSMobileTaggingHybridIntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileTaggingHybridIntegrationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileTaggingHybridIntegrationTests/Pods-TSMobileTaggingHybridIntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D90D2891B8B370A0037A326 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		5A3642D7BD409320BC54CFBD /* Pods_TSMobileTaggingHybridIntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSMobileTaggingHybridIntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		784392CE1E49D10D00CB1744 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8FC652217C97F8C8333E020D /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegrationTests/Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96B62248ABE0162E91FF3E83 /* Pods_TSMobileAnalyticsIntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSMobileAnalyticsIntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FA81DB1CB6862100962865 /* TSMobileAnalyticsIntegration.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSMobileAnalyticsIntegration.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FA81DD1CB6862100962865 /* TSMobileAnalyticsIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSMobileAnalyticsIntegrationTests.m; sourceTree = "<group>"; };
+		99FA81DF1CB6862100962865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99FA81E91CB6863A00962865 /* TSMobileTaggingHybridIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSMobileTaggingHybridIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FA81EB1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSMobileAnalyticsHybridIntegrationTests.m; sourceTree = "<group>"; };
+		99FA81ED1CB6863A00962865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99FA81F51CBB8F9700962865 /* TSMobileTaggingIntegration.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TSMobileTaggingIntegration.entitlements; sourceTree = "<group>"; };
+		99FA81F61CBB909000962865 /* TSMobileTaggingHybridIntegration.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TSMobileTaggingHybridIntegration.entitlements; sourceTree = "<group>"; };
+		A603A906EB61BA9BCF275B22 /* Pods-TSMobileTaggingHybridIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileTaggingHybridIntegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileTaggingHybridIntegration/Pods-TSMobileTaggingHybridIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		BBD29640846B4D05D50E574B /* Pods-TSMobileTaggingHybridIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileTaggingHybridIntegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileTaggingHybridIntegration/Pods-TSMobileTaggingHybridIntegration.debug.xcconfig"; sourceTree = "<group>"; };
+		CAAD73730295099F0123EB11 /* Pods-TSMobileAnalyticsIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegration/Pods-TSMobileAnalyticsIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		E3087BF315EE4A0D00EBE883 /* sms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sms.html; sourceTree = "<group>"; };
+		E310E03315824F9C005C2F10 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E310E03415824F9C005C2F10 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E310E03815825014005C2F10 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E310E03915825014005C2F10 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E32D8E941545854A000C9F29 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E33FAE731536CEF1005B48ED /* TSMobileTaggingHybridIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSMobileTaggingHybridIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E33FAE7A1536CEF1005B48ED /* MTHybridIntegration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MTHybridIntegration-Info.plist"; sourceTree = "<group>"; };
+		E33FAE7C1536CEF1005B48ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E33FAE7E1536CEF1005B48ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E33FAE801536CEF1005B48ED /* MTHybridIntegration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTHybridIntegration-Prefix.pch"; sourceTree = "<group>"; };
+		E33FAE811536CEF1005B48ED /* MTHIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTHIAppDelegate.h; sourceTree = "<group>"; };
+		E33FAE821536CEF1005B48ED /* MTHIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTHIAppDelegate.m; sourceTree = "<group>"; };
+		E33FAE841536CEF1005B48ED /* MTHIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTHIViewController.h; sourceTree = "<group>"; };
+		E33FAE851536CEF1005B48ED /* MTHIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTHIViewController.m; sourceTree = "<group>"; };
+		E33FAE881536CEF1005B48ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MTHIViewController.xib; sourceTree = "<group>"; };
+		E3856BC71536C5CA008CF626 /* TSMobileAnalyticsIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSMobileAnalyticsIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3856BCB1536C5CA008CF626 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E3856BCD1536C5CA008CF626 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E3856BCF1536C5CA008CF626 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E3856BD31536C5CA008CF626 /* MTIntegration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MTIntegration-Info.plist"; sourceTree = "<group>"; };
+		E3856BD51536C5CA008CF626 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3856BD71536C5CA008CF626 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3856BD91536C5CA008CF626 /* MTIntegration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTIntegration-Prefix.pch"; sourceTree = "<group>"; };
+		E3856BDA1536C5CA008CF626 /* MTIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTIAppDelegate.h; sourceTree = "<group>"; };
+		E3856BDB1536C5CA008CF626 /* MTIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTIAppDelegate.m; sourceTree = "<group>"; };
+		E3856BDD1536C5CA008CF626 /* MTIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTIViewController.h; sourceTree = "<group>"; };
+		E3856BDE1536C5CA008CF626 /* MTIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTIViewController.m; sourceTree = "<group>"; };
+		E3856BE11536C5CA008CF626 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MTIViewController.xib; sourceTree = "<group>"; };
+		E385E835153C3F73000FAE85 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TSMobileAnalytics.framework; sourceTree = "<group>"; };
+		F33B410BDC5017CA81E97B43 /* Pods-TSMobileTaggingHybridIntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileTaggingHybridIntegrationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileTaggingHybridIntegrationTests/Pods-TSMobileTaggingHybridIntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F533F2C409F6054B48C233F2 /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegrationTests/Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99FA81D81CB6862100962865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99FA81F31CB689E600962865 /* TSMobileAnalytics.framework in Frameworks */,
+				D5ED92E377D7D621060D496D /* Pods_TSMobileAnalyticsIntegrationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99FA81E61CB6863A00962865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99FA81F41CB689F300962865 /* TSMobileAnalytics.framework in Frameworks */,
+				F764E0EB0A41734A50845771 /* Pods_TSMobileTaggingHybridIntegrationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33FAE701536CEF1005B48ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32D8E951545854A000C9F29 /* Security.framework in Frameworks */,
+				E33FAE751536CEF1005B48ED /* UIKit.framework in Frameworks */,
+				E33FAE761536CEF1005B48ED /* Foundation.framework in Frameworks */,
+				E8A4C7E61C97058100B72E6C /* TSMobileAnalytics.framework in Frameworks */,
+				E33FAE771536CEF1005B48ED /* CoreGraphics.framework in Frameworks */,
+				5B378AC37E5059C49748534F /* Pods_TSMobileTaggingHybridIntegration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3856BC41536C5CA008CF626 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				995DB43B1CBD273700106417 /* TSMobileAnalytics.framework in Frameworks */,
+				E3765FAF1580FDDA00578891 /* Security.framework in Frameworks */,
+				E3856BCC1536C5CA008CF626 /* UIKit.framework in Frameworks */,
+				E3856BCE1536C5CA008CF626 /* Foundation.framework in Frameworks */,
+				E3856BD01536C5CA008CF626 /* CoreGraphics.framework in Frameworks */,
+				6A56019A62C265E4729BC82E /* Pods_TSMobileAnalyticsIntegration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0601F9B645E9707D7C1DFFF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E36DA6D0935498ADDB83527 /* Pods-TSMobileAnalyticsIntegration.debug.xcconfig */,
+				CAAD73730295099F0123EB11 /* Pods-TSMobileAnalyticsIntegration.release.xcconfig */,
+				BBD29640846B4D05D50E574B /* Pods-TSMobileTaggingHybridIntegration.debug.xcconfig */,
+				A603A906EB61BA9BCF275B22 /* Pods-TSMobileTaggingHybridIntegration.release.xcconfig */,
+				8FC652217C97F8C8333E020D /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */,
+				F533F2C409F6054B48C233F2 /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */,
+				F33B410BDC5017CA81E97B43 /* Pods-TSMobileTaggingHybridIntegrationTests.debug.xcconfig */,
+				490E4316D36157C15B97EB1F /* Pods-TSMobileTaggingHybridIntegrationTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99FA81DC1CB6862100962865 /* TSMobileAnalyticsIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				99FA81DD1CB6862100962865 /* TSMobileAnalyticsIntegrationTests.m */,
+				99FA81DF1CB6862100962865 /* Info.plist */,
+			);
+			name = TSMobileAnalyticsIntegrationTests;
+			path = TSMobileTaggingIntegrationTests;
+			sourceTree = "<group>";
+		};
+		99FA81EA1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				99FA81EB1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests.m */,
+				99FA81ED1CB6863A00962865 /* Info.plist */,
+			);
+			name = TSMobileAnalyticsHybridIntegrationTests;
+			path = TSMobileTaggingHybridIntegrationTests;
+			sourceTree = "<group>";
+		};
+		E310E03215824F9C005C2F10 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E310E03315824F9C005C2F10 /* icon.png */,
+				E310E03415824F9C005C2F10 /* icon@2x.png */,
+			);
+			name = Icons;
+			path = icons;
+			sourceTree = "<group>";
+		};
+		E310E03715825014005C2F10 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E310E03815825014005C2F10 /* icon.png */,
+				E310E03915825014005C2F10 /* icon@2x.png */,
+			);
+			name = Icons;
+			path = icons;
+			sourceTree = "<group>";
+		};
+		E33FAE531536C612005B48ED /* Subprojects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subprojects;
+			sourceTree = "<group>";
+		};
+		E33FAE781536CEF1005B48ED /* MTHybridIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				E310E03715825014005C2F10 /* Icons */,
+				E385E834153C3F55000FAE85 /* Web */,
+				E33FAE811536CEF1005B48ED /* MTHIAppDelegate.h */,
+				E33FAE821536CEF1005B48ED /* MTHIAppDelegate.m */,
+				E33FAE841536CEF1005B48ED /* MTHIViewController.h */,
+				E33FAE851536CEF1005B48ED /* MTHIViewController.m */,
+				E33FAE871536CEF1005B48ED /* MTHIViewController.xib */,
+				E33FAE791536CEF1005B48ED /* Supporting Files */,
+			);
+			path = MTHybridIntegration;
+			sourceTree = "<group>";
+		};
+		E33FAE791536CEF1005B48ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E33FAE7A1536CEF1005B48ED /* MTHybridIntegration-Info.plist */,
+				E33FAE7B1536CEF1005B48ED /* InfoPlist.strings */,
+				E33FAE7E1536CEF1005B48ED /* main.m */,
+				E33FAE801536CEF1005B48ED /* MTHybridIntegration-Prefix.pch */,
+				4D90D2891B8B370A0037A326 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3856BBC1536C5C9008CF626 = {
+			isa = PBXGroup;
+			children = (
+				99FA81F61CBB909000962865 /* TSMobileTaggingHybridIntegration.entitlements */,
+				99FA81F51CBB8F9700962865 /* TSMobileTaggingIntegration.entitlements */,
+				E3856BD11536C5CA008CF626 /* MTIntegration */,
+				E33FAE781536CEF1005B48ED /* MTHybridIntegration */,
+				99FA81DC1CB6862100962865 /* TSMobileAnalyticsIntegrationTests */,
+				99FA81EA1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests */,
+				E3856BCA1536C5CA008CF626 /* Frameworks */,
+				E33FAE531536C612005B48ED /* Subprojects */,
+				E3856BC81536C5CA008CF626 /* Products */,
+				0601F9B645E9707D7C1DFFF3 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E3856BC81536C5CA008CF626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3856BC71536C5CA008CF626 /* TSMobileAnalyticsIntegration.app */,
+				E33FAE731536CEF1005B48ED /* TSMobileTaggingHybridIntegration.app */,
+				99FA81DB1CB6862100962865 /* TSMobileAnalyticsIntegration.xctest */,
+				99FA81E91CB6863A00962865 /* TSMobileTaggingHybridIntegrationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3856BCA1536C5CA008CF626 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				784392CE1E49D10D00CB1744 /* WebKit.framework */,
+				E8A4C7E41C97058100B72E6C /* TSMobileAnalytics.framework */,
+				E32D8E941545854A000C9F29 /* Security.framework */,
+				E3856BCB1536C5CA008CF626 /* UIKit.framework */,
+				E3856BCD1536C5CA008CF626 /* Foundation.framework */,
+				E3856BCF1536C5CA008CF626 /* CoreGraphics.framework */,
+				0B5B865EB2B69F7B7329C15F /* Pods_TSMobileAnalyticsIntegration.framework */,
+				96B62248ABE0162E91FF3E83 /* Pods_TSMobileAnalyticsIntegrationTests.framework */,
+				3AA53BA674FB26389A465C04 /* Pods_TSMobileTaggingHybridIntegration.framework */,
+				5A3642D7BD409320BC54CFBD /* Pods_TSMobileTaggingHybridIntegrationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3856BD11536C5CA008CF626 /* MTIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				E310E03215824F9C005C2F10 /* Icons */,
+				E3856BDA1536C5CA008CF626 /* MTIAppDelegate.h */,
+				E3856BDB1536C5CA008CF626 /* MTIAppDelegate.m */,
+				E3856BDD1536C5CA008CF626 /* MTIViewController.h */,
+				E3856BDE1536C5CA008CF626 /* MTIViewController.m */,
+				E3856BE01536C5CA008CF626 /* MTIViewController.xib */,
+				E3856BD21536C5CA008CF626 /* Supporting Files */,
+			);
+			path = MTIntegration;
+			sourceTree = "<group>";
+		};
+		E3856BD21536C5CA008CF626 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3856BD31536C5CA008CF626 /* MTIntegration-Info.plist */,
+				E3856BD41536C5CA008CF626 /* InfoPlist.strings */,
+				E3856BD71536C5CA008CF626 /* main.m */,
+				E3856BD91536C5CA008CF626 /* MTIntegration-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E385E834153C3F55000FAE85 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				E3087BF315EE4A0D00EBE883 /* sms.html */,
+				E385E835153C3F73000FAE85 /* index.html */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99FA81DA1CB6862100962865 /* TSMobileAnalyticsIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99FA81E41CB6862100962865 /* Build configuration list for PBXNativeTarget "TSMobileAnalyticsIntegrationTests" */;
+			buildPhases = (
+				87015B86C76BE1E0AB43A39E /* [CP] Check Pods Manifest.lock */,
+				99FA81D71CB6862100962865 /* Sources */,
+				99FA81D81CB6862100962865 /* Frameworks */,
+				99FA81D91CB6862100962865 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99FA81E11CB6862100962865 /* PBXTargetDependency */,
+			);
+			name = TSMobileAnalyticsIntegrationTests;
+			productName = TSMobileTaggingIntegrationTests;
+			productReference = 99FA81DB1CB6862100962865 /* TSMobileAnalyticsIntegration.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		99FA81E81CB6863A00962865 /* TSMobileTaggingHybridIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99FA81F01CB6863A00962865 /* Build configuration list for PBXNativeTarget "TSMobileTaggingHybridIntegrationTests" */;
+			buildPhases = (
+				39B22B726A67CBC0D37008D4 /* [CP] Check Pods Manifest.lock */,
+				99FA81E51CB6863A00962865 /* Sources */,
+				99FA81E61CB6863A00962865 /* Frameworks */,
+				99FA81E71CB6863A00962865 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99FA81EF1CB6863A00962865 /* PBXTargetDependency */,
+			);
+			name = TSMobileTaggingHybridIntegrationTests;
+			productName = TSMobileTaggingHybridIntegrationTests;
+			productReference = 99FA81E91CB6863A00962865 /* TSMobileTaggingHybridIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E33FAE721536CEF1005B48ED /* TSMobileTaggingHybridIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E33FAE8A1536CEF1005B48ED /* Build configuration list for PBXNativeTarget "TSMobileTaggingHybridIntegration" */;
+			buildPhases = (
+				59705B7B55BAD1A55860A0FC /* [CP] Check Pods Manifest.lock */,
+				E3C204BA15F0984700537E3E /* ShellScript */,
+				E33FAE6F1536CEF1005B48ED /* Sources */,
+				E33FAE701536CEF1005B48ED /* Frameworks */,
+				E33FAE711536CEF1005B48ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSMobileTaggingHybridIntegration;
+			productName = TNSSIFOHybridIntegration;
+			productReference = E33FAE731536CEF1005B48ED /* TSMobileTaggingHybridIntegration.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3856BC61536C5CA008CF626 /* TSMobileAnalyticsIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3856BFA1536C5CB008CF626 /* Build configuration list for PBXNativeTarget "TSMobileAnalyticsIntegration" */;
+			buildPhases = (
+				176DCD93A6B6FE21868F1284 /* [CP] Check Pods Manifest.lock */,
+				E3C204B915F0983700537E3E /* ShellScript */,
+				E3856BC31536C5CA008CF626 /* Sources */,
+				E3856BC41536C5CA008CF626 /* Frameworks */,
+				E3856BC51536C5CA008CF626 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSMobileAnalyticsIntegration;
+			productName = TNSSIFOIntegration;
+			productReference = E3856BC71536C5CA008CF626 /* TSMobileAnalyticsIntegration.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3856BBE1536C5CA008CF626 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TSI;
+				LastUpgradeCheck = 0640;
+				TargetAttributes = {
+					99FA81DA1CB6862100962865 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E3856BC61536C5CA008CF626;
+					};
+					99FA81E81CB6863A00962865 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E33FAE721536CEF1005B48ED;
+					};
+					E33FAE721536CEF1005B48ED = {
+						DevelopmentTeam = P4KHK354DV;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					E3856BC61536C5CA008CF626 = {
+						DevelopmentTeam = P4KHK354DV;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E3856BC11536C5CA008CF626 /* Build configuration list for PBXProject "TSMobileAnalyticsIntegration" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E3856BBC1536C5C9008CF626;
+			productRefGroup = E3856BC81536C5CA008CF626 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3856BC61536C5CA008CF626 /* TSMobileAnalyticsIntegration */,
+				E33FAE721536CEF1005B48ED /* TSMobileTaggingHybridIntegration */,
+				99FA81DA1CB6862100962865 /* TSMobileAnalyticsIntegrationTests */,
+				99FA81E81CB6863A00962865 /* TSMobileTaggingHybridIntegrationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99FA81D91CB6862100962865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99FA81E71CB6863A00962865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33FAE711536CEF1005B48ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E33FAE891536CEF1005B48ED /* MTHIViewController.xib in Resources */,
+				E33FAE8F1536CFF1005B48ED /* InfoPlist.strings in Resources */,
+				E310E03E15825053005C2F10 /* icon@2x.png in Resources */,
+				4D90D28B1B8B3B540037A326 /* Default-568h@2x.png in Resources */,
+				E310E04215825089005C2F10 /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3856BC51536C5CA008CF626 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3856BD61536C5CA008CF626 /* InfoPlist.strings in Resources */,
+				E3856BE21536C5CA008CF626 /* MTIViewController.xib in Resources */,
+				E310E04015825063005C2F10 /* icon@2x.png in Resources */,
+				4D90D28A1B8B370A0037A326 /* Default-568h@2x.png in Resources */,
+				E310E04115825066005C2F10 /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		176DCD93A6B6FE21868F1284 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSMobileAnalyticsIntegration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39B22B726A67CBC0D37008D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSMobileTaggingHybridIntegrationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59705B7B55BAD1A55860A0FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSMobileTaggingHybridIntegration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87015B86C76BE1E0AB43A39E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSMobileAnalyticsIntegrationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3C204B915F0983700537E3E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$((0x$buildNumber))\nbuildNumber=$(($buildNumber + 1))\nbuildNumber=$(printf \"%X\" $buildNumber)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		E3C204BA15F0984700537E3E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$((0x$buildNumber))\nbuildNumber=$(($buildNumber + 1))\nbuildNumber=$(printf \"%X\" $buildNumber)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99FA81D71CB6862100962865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99FA81DE1CB6862100962865 /* TSMobileAnalyticsIntegrationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99FA81E51CB6863A00962865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99FA81EC1CB6863A00962865 /* TSMobileAnalyticsHybridIntegrationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33FAE6F1536CEF1005B48ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E33FAE8D1536CFCD005B48ED /* MTHIViewController.m in Sources */,
+				E33FAE8E1536CFD1005B48ED /* MTHIAppDelegate.m in Sources */,
+				E33FAE901536D000005B48ED /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3856BC31536C5CA008CF626 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3856BD81536C5CA008CF626 /* main.m in Sources */,
+				E3856BDC1536C5CA008CF626 /* MTIAppDelegate.m in Sources */,
+				E3856BDF1536C5CA008CF626 /* MTIViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99FA81E11CB6862100962865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3856BC61536C5CA008CF626 /* TSMobileAnalyticsIntegration */;
+			targetProxy = 99FA81E01CB6862100962865 /* PBXContainerItemProxy */;
+		};
+		99FA81EF1CB6863A00962865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E33FAE721536CEF1005B48ED /* TSMobileTaggingHybridIntegration */;
+			targetProxy = 99FA81EE1CB6863A00962865 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E33FAE7B1536CEF1005B48ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E33FAE7C1536CEF1005B48ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E33FAE871536CEF1005B48ED /* MTHIViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E33FAE881536CEF1005B48ED /* en */,
+			);
+			name = MTHIViewController.xib;
+			sourceTree = "<group>";
+		};
+		E3856BD41536C5CA008CF626 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3856BD51536C5CA008CF626 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E3856BE01536C5CA008CF626 /* MTIViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3856BE11536C5CA008CF626 /* en */,
+			);
+			name = MTIViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99FA81E21CB6862100962865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC652217C97F8C8333E020D /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TSMobileTaggingIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = se.dynamo.TSMobileTaggingIntegrationTests;
+				PRODUCT_NAME = TSMobileAnalyticsIntegration;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSMobileAnalyticsIntegration.app/TSMobileAnalyticsIntegration";
+			};
+			name = Debug;
+		};
+		99FA81E31CB6862100962865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F533F2C409F6054B48C233F2 /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TSMobileTaggingIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = se.dynamo.TSMobileTaggingIntegrationTests;
+				PRODUCT_NAME = TSMobileAnalyticsIntegration;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSMobileAnalyticsIntegration.app/TSMobileAnalyticsIntegration";
+			};
+			name = Release;
+		};
+		99FA81F11CB6863A00962865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F33B410BDC5017CA81E97B43 /* Pods-TSMobileTaggingHybridIntegrationTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TSMobileTaggingHybridIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = se.dynamo.TSMobileTaggingHybridIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSMobileTaggingHybridIntegration.app/TSMobileTaggingHybridIntegration";
+			};
+			name = Debug;
+		};
+		99FA81F21CB6863A00962865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490E4316D36157C15B97EB1F /* Pods-TSMobileTaggingHybridIntegrationTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TSMobileTaggingHybridIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = se.dynamo.TSMobileTaggingHybridIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSMobileTaggingHybridIntegration.app/TSMobileTaggingHybridIntegration";
+			};
+			name = Release;
+		};
+		E33FAE8B1536CEF1005B48ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBD29640846B4D05D50E574B /* Pods-TSMobileTaggingHybridIntegration.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSMobileTaggingHybridIntegration.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTHybridIntegration/MTHybridIntegration-Prefix.pch";
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INFOPLIST_FILE = "MTHybridIntegration/MTHybridIntegration-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = mo.dyna.TSMobileAnalyticsHybridIntergration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E33FAE8C1536CEF1005B48ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A603A906EB61BA9BCF275B22 /* Pods-TSMobileTaggingHybridIntegration.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSMobileTaggingHybridIntegration.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTHybridIntegration/MTHybridIntegration-Prefix.pch";
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INFOPLIST_FILE = "MTHybridIntegration/MTHybridIntegration-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = mo.dyna.TSMobileAnalyticsHybridIntergration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E5A3856-D233-4E36-BEAC-03654D2A3F7D";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E3856BF81536C5CB008CF626 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E3856BF91536C5CB008CF626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3856BFB1536C5CB008CF626 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E36DA6D0935498ADDB83527 /* Pods-TSMobileAnalyticsIntegration.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSMobileTaggingIntegration.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTIntegration/MTIntegration-Prefix.pch";
+				INFOPLIST_FILE = "MTIntegration/MTIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mo.dyna.TSMobileAnalyticsIntegration;
+				PRODUCT_NAME = TSMobileAnalyticsIntegration;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E3856BFC1536C5CB008CF626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAAD73730295099F0123EB11 /* Pods-TSMobileAnalyticsIntegration.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSMobileTaggingIntegration.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTIntegration/MTIntegration-Prefix.pch";
+				INFOPLIST_FILE = "MTIntegration/MTIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mo.dyna.TSMobileAnalyticsIntegration;
+				PRODUCT_NAME = TSMobileAnalyticsIntegration;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E5A3856-D233-4E36-BEAC-03654D2A3F7D";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99FA81E41CB6862100962865 /* Build configuration list for PBXNativeTarget "TSMobileAnalyticsIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99FA81E21CB6862100962865 /* Debug */,
+				99FA81E31CB6862100962865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99FA81F01CB6863A00962865 /* Build configuration list for PBXNativeTarget "TSMobileTaggingHybridIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99FA81F11CB6863A00962865 /* Debug */,
+				99FA81F21CB6863A00962865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E33FAE8A1536CEF1005B48ED /* Build configuration list for PBXNativeTarget "TSMobileTaggingHybridIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E33FAE8B1536CEF1005B48ED /* Debug */,
+				E33FAE8C1536CEF1005B48ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3856BC11536C5CA008CF626 /* Build configuration list for PBXProject "TSMobileAnalyticsIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3856BF81536C5CB008CF626 /* Debug */,
+				E3856BF91536C5CB008CF626 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3856BFA1536C5CB008CF626 /* Build configuration list for PBXNativeTarget "TSMobileAnalyticsIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3856BFB1536C5CB008CF626 /* Debug */,
+				E3856BFC1536C5CB008CF626 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3856BBE1536C5CA008CF626 /* Project object */;
+}

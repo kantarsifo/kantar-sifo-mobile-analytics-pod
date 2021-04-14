@@ -35,14 +35,8 @@ The Sifo SDK is happy with whatever permissions your app uses.
 
 * If your app requests access to IDFA through the App Tracking Transparency framework the Sifo SDK will also get access to IDFA.
 * If your app does not request access to IDFA the Sifo SDK will use the IDFV to track panelists.
-* You control if the Sifo SDK shall attempt to use system identifiers (IDFA/IDFV) by setting the parameter `enableSystemIdentifierTracking`, see below. If no system identifiers are used, then only Kantar panel id:s will be used.
 
-
-## Release notes (latest; see `release-notes.txt` for more)
-
-5.1.0
-- Optional setting (enableSystemIdentifierTracking) introduced to give app developers control over whether system identifiers can be used or not.
-- Bug fixes
+## Release notes
 
 5.0.4
 - SDK not longer uses AppTrackingTransparency framework.
@@ -87,12 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TSMobileAnalytics.initialize(withCPID: ...,
                                      applicationName: ...,
                                      trackingType: ...,
-                                     enableSystemIdentifierTracking: ...,
                                      isWebViewBased: ...,
-                                     keychainAccessGroup: ...,
-                                     additionals: [
-                                         "comscore_client_id": ...
-                                     ])
+                                     keychainAccessGroup: ...)
         return true
     }
 }
@@ -101,12 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 * `CPID` - Your Kantar Sifo Analytics id.
 * `ApplicationName` - Name of your app, can be anything you like that makes sense.
 * `TrackingType` - Either `TrackPanelistsOnly` or `TrackUsersAndPanelists`.
-* `enableSystemIdentifierTracking` - Determines if the SDK will attempt to use system identifiers.
-  * `false` - This setting is sufficient for the Orvesto Internet measurement, the measurement will use Kantar Sifo panelist ID:s only.
-  * `true` - This setting is mandatory if you participate in the MMS measurement. The Sifo SDK will use the identifiers your app have received consent for by the user (the SDK will never activate the Application Tracking Transparency popup, it is the responsibility for your app).
 * `IsWebViewBased` - Set this to `true` if the app’s primary interface is displayed in one or many webviews.
 * `KeychainAccessGroup` - (Optional) Your app id or a shared app id if you have several apps sharing a keychain and your want to track the user between apps. If you don't need to use Shared Keychain functionality, then set this to `nil`.
-* `additionals` `comscore_client_id` - (Mandatory for the MMS measurement) Please contact Kantar Sifo for details (see Contact Information below).
 
 ## Integration - Panelist support
 
@@ -193,9 +179,6 @@ TSMobileAnalytics.sendTag(withCategories: ...,
 
 * Categories is an array of strings.
 * Id is a string with the identifier of the current content.
-
-### Encoding
-All strings sent to the Sifo backend are encoded using utf-8. 
 
 ## Implementation check
 
