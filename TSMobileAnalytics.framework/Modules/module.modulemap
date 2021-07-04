@@ -1,4 +1,0 @@
-module TSMobileAnalytics {
-    umbrella header "Headers/TSMobileAnalytics.h"
-    export *
-}
