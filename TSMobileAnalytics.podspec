@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = 'TSMobileAnalytics'
-  s.version             = '5.1.1'
+  s.version             = '5.2.0'
 
   s.summary             = 'TSMobileAnalytics'
   s.homepage            = 'http://kantarsifo.se'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.preserve_paths      = 'Documentation/**/*', 'Samples/**/*'
 
   s.platform            = :ios, '9.0'
-  s.vendored_frameworks = 'TSMobileAnalytics.framework'
+  s.vendored_frameworks = 'TSMobileAnalytics.xcframework'
 
   s.frameworks          = 'Foundation', 'UIKit', 'Security'
   s.module_name         = 'TSMobileAnalytics'

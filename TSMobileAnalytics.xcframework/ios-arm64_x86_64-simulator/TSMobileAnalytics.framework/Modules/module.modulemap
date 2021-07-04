@@ -1,0 +1,6 @@
+framework module TSMobileAnalytics {
+  umbrella header "TSMobileAnalytics.h"
+
+  export *
+  module * { export * }
+}
