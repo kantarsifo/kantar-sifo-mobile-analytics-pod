@@ -1,5 +1,5 @@
 PODS:
-  - TSMobileAnalytics (5.0.4)
+  - TSMobileAnalytics (5.1.0)
 
 DEPENDENCIES:
   - TSMobileAnalytics
@@ -9,7 +9,7 @@ SPEC REPOS:
     - TSMobileAnalytics
 
 SPEC CHECKSUMS:
-  TSMobileAnalytics: 056255cd4fafdad03fbef8d6b58f48ad20be4e6f
+  TSMobileAnalytics: b7f45989c9d36ec000e0e4ec67c9085594af859b
 
 PODFILE CHECKSUM: bbf463142eaa6e34310964bb2f347797fa449bf4
 

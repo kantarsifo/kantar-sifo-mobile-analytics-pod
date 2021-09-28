@@ -22,7 +22,6 @@
 		7868108E1E1AE69400F1E3D5 /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786810861E1AE58E00F1E3D5 /* TSMobileAnalytics.framework */; };
 		786810901E1AE6AB00F1E3D5 /* TSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786810861E1AE58E00F1E3D5 /* TSMobileAnalytics.framework */; };
 		7868109A1E1BBCCC00F1E3D5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786810981E1BBCCC00F1E3D5 /* WebViewController.swift */; };
-		DCB777593079902D70966C44 /* Pods_TSMobileAnalyticsIntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2064423CDD8BA83635B90400 /* Pods_TSMobileAnalyticsIntegrationTests.framework */; };
 		FE25CAF35DC4890C762F5818 /* Pods_NativeIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21687CE9DD8272E490EF33F1 /* Pods_NativeIntegration.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,11 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2064423CDD8BA83635B90400 /* Pods_TSMobileAnalyticsIntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSMobileAnalyticsIntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21687CE9DD8272E490EF33F1 /* Pods_NativeIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22979CB5F173B2C565D05F1D /* Pods-NativeIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeIntegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeIntegration/Pods-NativeIntegration.release.xcconfig"; sourceTree = "<group>"; };
 		4A70CA9E2AA61F01AB4205C3 /* Pods_HybridIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HybridIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67B64337FA9136FB28CE3B19 /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegrationTests/Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6FAD79985E1D1D9B6A7E4B04 /* Pods-HybridIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridIntegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HybridIntegration/Pods-HybridIntegration.debug.xcconfig"; sourceTree = "<group>"; };
 		78071EA61E23DE4E008313A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78071EA81E23DE6C008313A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		786810981E1BBCCC00F1E3D5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		7B73A820D56D50D9D32DCA67 /* Pods-NativeIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeIntegration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeIntegration/Pods-NativeIntegration.debug.xcconfig"; sourceTree = "<group>"; };
 		A8B5557907F9824CEF564EBD /* Pods-HybridIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridIntegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HybridIntegration/Pods-HybridIntegration.release.xcconfig"; sourceTree = "<group>"; };
-		ED9BAB496EA0BBAF1E4BB4DB /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSMobileAnalyticsIntegrationTests/Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCB777593079902D70966C44 /* Pods_TSMobileAnalyticsIntegrationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +168,6 @@
 				786810841E1AE57D00F1E3D5 /* Security.framework */,
 				4A70CA9E2AA61F01AB4205C3 /* Pods_HybridIntegration.framework */,
 				21687CE9DD8272E490EF33F1 /* Pods_NativeIntegration.framework */,
-				2064423CDD8BA83635B90400 /* Pods_TSMobileAnalyticsIntegrationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,8 +179,6 @@
 				A8B5557907F9824CEF564EBD /* Pods-HybridIntegration.release.xcconfig */,
 				7B73A820D56D50D9D32DCA67 /* Pods-NativeIntegration.debug.xcconfig */,
 				22979CB5F173B2C565D05F1D /* Pods-NativeIntegration.release.xcconfig */,
-				67B64337FA9136FB28CE3B19 /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */,
-				ED9BAB496EA0BBAF1E4BB4DB /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -216,7 +208,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 786810671E1A8E8E00F1E3D5 /* Build configuration list for PBXNativeTarget "TSMobileAnalyticsIntegrationTests" */;
 			buildPhases = (
-				0A3A99275A647A4FEDB24C53 /* [CP] Check Pods Manifest.lock */,
 				786810571E1A8E8E00F1E3D5 /* Sources */,
 				786810581E1A8E8E00F1E3D5 /* Frameworks */,
 				786810591E1A8E8E00F1E3D5 /* Resources */,
@@ -333,24 +324,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A3A99275A647A4FEDB24C53 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TSMobileAnalyticsIntegrationTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DAA5BD2E1EF694F806345F7E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,7 +576,6 @@
 		};
 		786810681E1A8E8E00F1E3D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67B64337FA9136FB28CE3B19 /* Pods-TSMobileAnalyticsIntegrationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,7 +590,6 @@
 		};
 		786810691E1A8E8E00F1E3D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED9BAB496EA0BBAF1E4BB4DB /* Pods-TSMobileAnalyticsIntegrationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
